@@ -1,0 +1,20 @@
+{
+  "name": "docket",
+  "version": "0.1.0",
+  "description": "Docket JavaScript Documentation Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint docket-object.js docket-signature.js docket.js index.js"
+  },
+  "keywords": [
+    "Docket",
+    "JavaScript",
+    "Documentor",
+    "Documentation"
+  ],
+  "author": "Rich Lowe",
+  "license": "MIT",
+  "dependencies": {
+    "acorn": "^5.5.3"
+  }
+}
