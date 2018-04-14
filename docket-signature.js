@@ -11,7 +11,7 @@ class DocketSignature {
    * @added v0.1.0
    * @param data object[Object]
    * @returns object[DocketSignature]
-   * @description Returns a new [DocketSignature] instance, initializing with any *key: value* pairs provided in `data` with 
+   * @description Returns a new [DocketSignature] instance, initializing with any key: value pairs provided in `data` with 
    * keys that match setter method names.
    */
   constructor(data = {}) {

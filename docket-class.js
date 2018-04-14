@@ -11,7 +11,7 @@ class DocketClass {
    * @added v0.1.0
    * @param data object[Object]
    * @returns object[DocketClass]
-   * @description Returns a new [DocketClass] instance, initializing with any *key: value* pairs provided in `data` with keys 
+   * @description Returns a new [DocketClass] instance, initializing with any key: value pairs provided in `data` with keys 
    * that match setter method names.
    */
   constructor(data = {}) {

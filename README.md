@@ -15,7 +15,7 @@ console.log(util.inspect(parser.classes(), { depth: null }));
 
 ## Outputs
 
-**Note:** All of the parameters below can be accessed via helper methods that don't start with `_`.
+**Note:** All of the parameters below can be accessed via getter/setter methods of the same name that don't start with `_`.
 
 ```text
 [ DocketClass {
