@@ -4,7 +4,8 @@
   "description": "Docket JavaScript Documentation Generator",
   "main": "index.js",
   "scripts": {
-    "test": "eslint docket-object.js docket-signature.js docket.js index.js"
+    "start": "node example.js",
+    "test": "eslint docket-class.js docket-module.js docket-signature.js example.js index.js parser.js"
   },
   "keywords": [
     "Docket",
@@ -15,6 +16,19 @@
   "author": "Rich Lowe",
   "license": "MIT",
   "dependencies": {
-    "acorn": "^5.5.3"
+    "acorn": "^5.5.3",
+    "bootstrap": "^4.1.0",
+    "ejs": "^2.5.8",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "impliedStrict": true
+      }
+    }
   }
 }

@@ -1,0 +1,75 @@
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h3 class='mt-2'>Class: <%-c.module().length > 0 ? c.module() + '.' : ''%><%-c.name()%></h3>
+        </div>
+      </div>
+      <div class='pl-3'>
+        <% if ( c.copyright().length > 0 || c.authors().length > 0 ) { %>
+        <div class='row'>
+          <div class='col'>
+            <p>
+        <% } %>
+        <% if ( c.copyright().length > 0 ) { %>
+              <small>Copyright &copy; <%-c.copyright()%></small>
+              <br>
+        <% } %>
+        <% if ( c.authors().length > 0 ) { %>
+              <small>
+                <var>Written by: 
+        <%   for ( let i = 0, i_max = c.authors().length; i < i_max; i++ ) { %>
+                <%-c.authors()[i]%><%-i == i_max - 1 ? '' : ','%>
+        <%   } %>
+                </var>
+              </small>
+        <% } %>
+        <% if ( c.copyright().length > 0 || c.authors().length > 0 ) { %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+        <% if ( c.added().length > 0 || c.updated().length > 0 ) { %>
+        <div class='row'>
+          <div class='col'>
+            <p>
+        <% } %>
+        <% if ( c.added().length > 0 ) { %>
+              <small>Added in: <%-c.added()%></small>
+              <br>
+        <% } %>
+        <% if ( c.updated().length > 0 ) { %>
+        <%   c.updated().forEach((updated) => { %>
+              <small>Updated in: <%-updated%></small>
+              <br>
+        <%   }); %>
+        <% } %>
+        <% if ( c.added().length > 0 || c.updated().length > 0 ) { %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+        <div class='row'>
+          <div class='col'>
+            <ul>
+              <li>&lt;<a class='text-success' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>&gt;</li>
+            </ul>
+          </div>
+        </div>
+        <% if ( c.description().length > 0 ) { %>
+        <div class='row'>
+          <div class='col'>
+            <p><%-c.description().replace(/`([a-zA-Z0-9_$]+)`/g, `<samp class='bg-samp px-1'>$1</samp>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `<a class='text-success' href='#'>$1</a>`)%></p>
+          </div>
+        </div>
+        <% } %>
+        <% if ( c.see().length > 0 ) { %>
+        <%   c.see().forEach((see) => { %>
+        <div class='row'>
+          <div class='col'>
+            <p>See: <a href='#'><%-see%></a></p>
+          </div>
+        </div>
+        <%   }); %>
+        <% } %>
+      </div>
+      

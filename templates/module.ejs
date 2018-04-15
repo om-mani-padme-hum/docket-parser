@@ -1,0 +1,68 @@
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h2 class='mt-1'>Module: <%-m.name()%></h2>
+        </div>
+      </div>
+      <div class='pl-3'>
+        <% if ( m.copyright().length > 0 || m.authors().length > 0 ) { %>
+        <div class='row'>
+          <div class='col'>
+            <p>
+        <% } %>
+        <% if ( m.copyright().length > 0 ) { %>
+              <small>Copyright &copy; <%-m.copyright()%></small>
+              <br>
+        <% } %>
+        <% if ( m.authors().length > 0 ) { %>
+              <small>
+                <var>Written by: 
+        <%   for ( let i = 0, i_max = m.authors().length; i < i_max; i++ ) { %>
+                <%-m.authors()[i]%><%-i == i_max - 1 ? '' : ','%>
+        <%   } %>
+                </var>
+              </small>
+        <% } %>
+        <% if ( m.copyright().length > 0 || m.authors().length > 0 ) { %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+        <% if ( m.added().length > 0 || m.updated().length > 0 ) { %>
+        <div class='row'>
+          <div class='col'>
+            <p>
+        <% } %>
+        <% if ( m.added().length > 0 ) { %>
+              <small>Added in: <%-m.added()%></small>
+              <br>
+        <% } %>
+        <% if ( m.updated().length > 0 ) { %>
+        <%   m.updated().forEach((updated) => { %>
+              <small>Updated in: <%-updated%></small>
+              <br>
+        <%   }); %>
+        <% } %>
+        <% if ( m.added().length > 0 || m.updated().length > 0 ) { %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+        <% if ( m.description().length > 0 ) { %>
+        <div class='row'>
+          <div class='col'>
+            <p><%-m.description().replace(/`([a-zA-Z0-9_$]+)`/g, `<samp class='bg-samp px-1'>$1</samp>`).replace(/`\[([a-zA-Z0-9_$]+)\]/g, `<a class='text-success' href='#'>$1</a>`)%></p>
+          </div>
+        </div>
+        <% } %>
+        <% if ( m.see().length > 0 ) { %>
+        <%   m.see().forEach((see) => { %>
+        <div class='row'>
+          <div class='col'>
+            <p>See: <a href='#'><%-see%></a></p>
+          </div>
+        </div>
+        <%   }); %>
+        <% } %>
+      </div>
+      

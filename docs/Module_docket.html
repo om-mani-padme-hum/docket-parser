@@ -1,0 +1,4364 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <style>
+      .bg-samp { background-color: #F0F0F0; }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='row'>
+        <div class='col'>
+          <h1 class='display-4 mb-0'>Docket v0.2.0 Documentation</h1>
+        </div>
+      </div>
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h2>Table of Contents</h2>
+        </div>
+      </div>
+      
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h2 class='mt-1'>Module: docket</h2>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Copyright &copy; 2018 Rich Lowe</small>
+              <br>
+        
+        
+              <small>
+                <var>Written by: 
+        
+                Rich Lowe
+        
+                </var>
+              </small>
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>A simple module for parsing and generating beatiful documentation from Node.js modules, classes, and method  signatures.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h3 class='mt-2'>Class: docket.DocketClass</h3>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Copyright &copy; 2018 Rich Lowe</small>
+              <br>
+        
+        
+              <small>
+                <var>Written by: 
+        
+                Rich Lowe
+        
+                </var>
+              </small>
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+              <li>&lt;<a class='text-success' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>&gt;</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Data model class for storing class-level docket entries.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>new DocketClass([data])</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>data</samp> - &lt;<a class='text-success' href='#'>Object</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>DocketClass</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Returns a new &lt;<a class='text-success' href='#'>DocketClass</a>&gt; instance, initializing with any key: value pairs provided in <samp class='bg-samp px-1'>data</samp> with keys  that match setter method names.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.added()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the version this class was added.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.added(version)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>version</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the version this class was added, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>version</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.authors()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the authors array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.authors(authors)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>authors</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the authors array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>authors</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.copyright()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the copyright text.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.copyright(text)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>text</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the copyright text, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>text</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.description()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the description.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.description(text)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>text</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the description, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>text</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.name()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the name.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.name(name)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>name</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the name, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>name</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.module()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the module name.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.module(name)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>name</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the module name, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>name</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.see()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the see array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.see(see)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>see</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the see array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>see</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.signatures()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the signatures array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.signatures(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the signatures array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.updated()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets an array of the versions where this class was updated.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketClass.updated(versions)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>versions</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets an array of the versions where this class was updated, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>versions</samp> is not a  valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h3 class='mt-2'>Class: docket.DocketModule</h3>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Copyright &copy; 2018 Rich Lowe</small>
+              <br>
+        
+        
+              <small>
+                <var>Written by: 
+        
+                Rich Lowe
+        
+                </var>
+              </small>
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+              <li>&lt;<a class='text-success' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>&gt;</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Data model class for storing module-level docket entries.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>new DocketModule([data])</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>data</samp> - &lt;<a class='text-success' href='#'>Object</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>DocketModule</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Returns a new &lt;<a class='text-success' href='#'>DocketModule</a>&gt; instance, initializing with any key: value pairs provided in <samp class='bg-samp px-1'>data</samp> with keys  that match setter method names.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.added()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the version this module was added.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.added(version)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>version</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the version this module was added, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>version</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.authors()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the authors array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.authors(authors)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>authors</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the authors array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>authors</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.classes()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the classes array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.classes(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the classes array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.copyright()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the copyright text.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.copyright(text)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>text</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the copyright text, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>text</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.description()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the description.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.description(text)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>text</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the description, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>text</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.name()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the name.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.name(text)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>text</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the name, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>text</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.see()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the see array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.see(see)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>see</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the see array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>see</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.signatures()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the signatures array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.signatures(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the signatures array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.updated()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets an array of the versions where this module was updated.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketModule.updated(versions)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>versions</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets an array of the versions where this module was updated, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>versions</samp> is not a  valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h3 class='mt-2'>Class: docket.DocketSignature</h3>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Copyright &copy; 2018 Rich Lowe</small>
+              <br>
+        
+        
+              <small>
+                <var>Written by: 
+        
+                Rich Lowe
+        
+                </var>
+              </small>
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+              <li>&lt;<a class='text-success' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>&gt;</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Data model class for storing signature-level docket entries.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>new DocketSignature([data])</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>data</samp> - &lt;<a class='text-success' href='#'>Object</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>DocketSignature</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Returns a new &lt;<a class='text-success' href='#'>DocketSignature</a>&gt; instance, initializing with any key: value pairs provided in <samp class='bg-samp px-1'>data</samp> with  keys that match setter method names.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.added()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the version this signature was added.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.added(version)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>version</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the version this signature was added, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>version</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.authors()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the authors array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.authors(authors)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>authors</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the authors array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>authors</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.class()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the class name.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.class(name)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>name</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the class name, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>name</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.description()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the description.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.description(text)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>text</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the description, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>text</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.name()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the name.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.name(name)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>name</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the name, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>name</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.module()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the module name.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.module(name)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>name</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the module name, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>name</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.param()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the param array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.param(param)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>param</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the param array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>param</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.returns()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the return data.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.returns(data)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>data</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the return data, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>data</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.see()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the see array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.see(see)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>see</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the see array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>see</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.signature()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the signature.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.signature(signature)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>signature</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the signature, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>signature</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.updated()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets an array of the versions where this signature was updated.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>DocketSignature.updated(versions)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>versions</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets an array of the versions where this signature was updated, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>versions</samp> is not a  valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <hr>
+      <div class='row'>
+        <div class='col'>
+          <h3 class='mt-2'>Class: docket.Parser</h3>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Copyright &copy; 2018 Rich Lowe</small>
+              <br>
+        
+        
+              <small>
+                <var>Written by: 
+        
+                Rich Lowe
+        
+                </var>
+              </small>
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+              <li>&lt;<a class='text-success' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'>Object</a>&gt;</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Class for parsing docket entries in JavaScript class files using the acorn JavaScript parser.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>new Parser([data])</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>data</samp> - &lt;<a class='text-success' href='#'>Object</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Parser</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Returns a new &lt;<a class='text-success' href='#'>Parser</a>&gt; instance, initializing with any key: value pairs provided in <samp class='bg-samp px-1'>data</samp> with keys that match setter method names.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.classes()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the classes array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.classes(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the classes array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.currentFile()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the current file name.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.currentFile(fileName)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>fileName</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the current file name, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>fileName</samp> is not a valid &lt;<a class='text-success' href='#'>string</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.documentClass(folderPath, class)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>folderPath</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>class</samp> - &lt;<a class='text-success' href='#'>DocketClass</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Documents <samp class='bg-samp px-1'>class</samp> in a file at <samp class='bg-samp px-1'>folderPath</samp>, including all of its methods that contain docket entries.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.documentModule(folderPath, module)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>folderPath</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>module</samp> - &lt;<a class='text-success' href='#'>DocketModule</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Documents <samp class='bg-samp px-1'>module</samp> in a file at <samp class='bg-samp px-1'>folderPath</samp>, including all of its classes that contain docket entries.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.documentSignature(folderPath, signature)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>folderPath</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>signature</samp> - &lt;<a class='text-success' href='#'>DocketSignature</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Documents <samp class='bg-samp px-1'>signature</samp> in a file at <samp class='bg-samp px-1'>folderPath</samp>.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.generateDocs(folderPath)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>folderPath</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Generates the documentation for parsed docket classes and saves one file per class to <samp class='bg-samp px-1'>folderPath</samp>.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.last()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>DocketClass|DocketModule|DocketSignature</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the last object or signature block found.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.last(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>DocketClass|DocketModule|DocketSignature</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the last object or signature block found, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>DocketClass</a>&gt; or &lt;<a class='text-success' href='#'>DocketModule</a>&gt; or &lt;<a class='text-success' href='#'>DocketSignature</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.lastClass()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>DocketClass</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the last class block found.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.lastClass(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>DocketClass</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the last class block found, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>DocketClass</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.lastModule()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>DocketModule</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the last module block found.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.lastModule(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>DocketModule</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the last module block found, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>DocketModule</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.lastSignature()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>DocketSignature</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the last signature block found.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.lastSignature(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>DocketSignature</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the last signature block found, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>DocketSignature</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.modules()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the modules array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.modules(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the modules array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.onComment(block, text, start, end)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>block</samp> - &lt;<a class='text-success' href='#'>boolean</a>&gt;</li>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>text</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>start</samp> - &lt;<a class='text-success' href='#'>number</a>&gt;</li>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>end</samp> - &lt;<a class='text-success' href='#'>number</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>This is a handler that processes comments found by the acorn JavaScript parser.  It is used to identify and parse docket entries and stores the resulting object tree in the parser for later document generation.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.parseFile(filePath)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.1.0</small>
+              <br>
+        
+        
+        
+              <small>Updated in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>filePath</samp> - &lt;<a class='text-success' href='#'>string</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Parses all docket entries in the modules, classes, and method and/or function signatures of the file located at  <samp class='bg-samp px-1'>filePath</samp> and stores the resulting object tree in the parser for later document generation.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.parseFiles(fileList)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>fileList</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Parses all docket entries in the modules, classes, and method and/or function signatures of the files in the  <samp class='bg-samp px-1'>fileList</samp> array and stores the resulting object tree in the parser for later document generation.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.renderClass(class)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>class</samp> - &lt;<a class='text-success' href='#'>DocketClass</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string The rendered HTML</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Renders the EJS class template using the provided <samp class='bg-samp px-1'>class</samp> object.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.renderFooter()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string The rendered HTML</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Renders the EJS footer template.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.renderHeader(data)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>data</samp> - &lt;<a class='text-success' href='#'>DocketClass|DocketModule|DocketSignature</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string The rendered HTML</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Renders the EJS header template.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.renderModule(module)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>module</samp> - &lt;<a class='text-success' href='#'>DocketModule</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string The rendered HTML</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Renders the EJS module template using the provided <samp class='bg-samp px-1'>module</samp> object.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.renderSignature(signature)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>signature</samp> - &lt;<a class='text-success' href='#'>DocketSignature</a>&gt;</li>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>string The rendered HTML</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Renders the EJS module template using the provided <samp class='bg-samp px-1'>signature</samp> object.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.signatures()</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+        
+              <li class='py-1 pl-1'>Returns - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Gets the signatures array.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <div class='row'>
+        <div class='col'>
+          <h5 class='mt-2'>Parser.signatures(obj)</h5>
+        </div>
+      </div>
+      <div class='pl-3'>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>
+        
+        
+              <small>Added in: v0.2.0</small>
+              <br>
+        
+        
+        
+            </p>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <ul>
+        
+              <li class='py-1'><samp class='bg-samp px-1'>obj</samp> - &lt;<a class='text-success' href='#'>Array</a>&gt;</li>
+        
+        
+            </ul>
+          </div>
+        </div>
+        
+        
+        <div class='row'>
+          <div class='col'>
+            <p>Sets the signatures array, throwing a &lt;<a class='text-success' href='#'>TypeError</a>&gt; if <samp class='bg-samp px-1'>obj</samp> is not a valid &lt;<a class='text-success' href='#'>Array</a>&gt;.</p>
+          </div>
+        </div>
+        
+        
+      </div>
+
+      <footer>
+        <div class='row'>
+          <div class='col'>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

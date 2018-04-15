@@ -1,27 +1,26 @@
 /**
- * @class docket.DocketClass
+ * @class docket.DocketModule
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
- * @added v0.1.0
- * @updated v0.2.0
- * @description Data model class for storing class-level docket entries.
+ * @added v0.2.0
+ * @description Data model class for storing module-level docket entries.
  */
-class DocketClass {
+class DocketModule {
   /**
-   * @signature new DocketClass([data])
-   * @added v0.1.0
+   * @signature new DocketModule([data])
+   * @added v0.2.0
    * @param data object[Object]
-   * @returns object[DocketClass]
-   * @description Returns a new [DocketClass] instance, initializing with any key: value pairs provided in `data` with keys 
+   * @returns object[DocketModule]
+   * @description Returns a new [DocketModule] instance, initializing with any key: value pairs provided in `data` with keys 
    * that match setter method names.
    */
   constructor(data = {}) {
     this.added(data.added || '');
     this.authors(data.authors || []);
+    this.classes(data.classes || []);
     this.copyright(data.copyright || '');
     this.description(data.description || '');
     this.name(data.name || '');
-    this.module(data.module || '');
     this.see(data.see || []);
     this.signatures(data.signatures || []);
     this.updated(data.updated || []);
@@ -29,15 +28,15 @@ class DocketClass {
   
   /**
    * @signature added()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns string
-   * @description Gets the version this class was added.
+   * @description Gets the version this module was added.
    *
    * @signature added(version)
-   * @added v0.1.0
+   * @added v0.2.0
    * @param version string
    * @throws object[TypeError]
-   * @description Sets the version this class was added, throwing a [TypeError] if `version` is not a valid [string].
+   * @description Sets the version this module was added, throwing a [TypeError] if `version` is not a valid [string].
    */
   added(arg1) {
     /** Getter */
@@ -57,12 +56,12 @@ class DocketClass {
   
   /**
    * @signature authors()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns object[Array]
    * @description Gets the authors array.
    *
    * @signature authors(authors)
-   * @added v0.1.0
+   * @added v0.2.0
    * @param authors object[Array]
    * @throws object[TypeError]
    * @description Sets the authors array, throwing a [TypeError] if `authors` is not a valid [Array].
@@ -84,13 +83,41 @@ class DocketClass {
   }
   
   /**
+   * @signature classes()
+   * @added v0.2.0
+   * @returns object[Array]
+   * @description Gets the classes array.
+   *
+   * @signature classes(obj)
+   * @added v0.2.0
+   * @param obj object[Array]
+   * @throws object[TypeError]
+   * @description Sets the classes array, throwing a [TypeError] if `obj` is not a valid [Array].
+   */
+  classes(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._classes;
+    
+    /** Setter */
+    else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
+      this._classes = arg1;
+    
+    /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.classes(null): Invalid signature.`);
+    else
+      throw new TypeError(`${this.constructor.name}.classes(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+  }
+  
+  /**
    * @signature copyright()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns string
    * @description Gets the copyright text.
    *
    * @signature copyright(text)
-   * @added v0.1.0
+   * @added v0.2.0
    * @param text string
    * @throws object[TypeError]
    * @description Sets the copyright text, throwing a [TypeError] if `text` is not a valid [string].
@@ -113,12 +140,12 @@ class DocketClass {
   
   /**
    * @signature description()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns string
    * @description Gets the description.
    *
    * @signature description(text)
-   * @added v0.1.0
+   * @added v0.2.0
    * @param text string
    * @throws object[TypeError]
    * @description Sets the description, throwing a [TypeError] if `text` is not a valid [string].
@@ -141,15 +168,15 @@ class DocketClass {
   
   /**
    * @signature name()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns string
    * @description Gets the name.
    *
-   * @signature name(name)
-   * @added v0.1.0
-   * @param name string
+   * @signature name(text)
+   * @added v0.2.0
+   * @param text string
    * @throws object[TypeError]
-   * @description Sets the name, throwing a [TypeError] if `name` is not a valid [string].
+   * @description Sets the name, throwing a [TypeError] if `text` is not a valid [string].
    */
   name(arg1) {
     /** Getter */
@@ -168,41 +195,13 @@ class DocketClass {
   }
   
   /**
-   * @signature module()
-   * @added v0.2.0
-   * @returns string
-   * @description Gets the module name.
-   *
-   * @signature module(name)
-   * @added v0.2.0
-   * @param name string
-   * @throws object[TypeError]
-   * @description Sets the module name, throwing a [TypeError] if `name` is not a valid [string].
-   */
-  module(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._module;
-    
-    /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._module = arg1;
-    
-    /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.module(null): Invalid signature.`);
-    else
-      throw new TypeError(`${this.constructor.name}.module(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
-  }
-  
-  /**
    * @signature see()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns object[Array]
    * @description Gets the see array.
    *
    * @signature see(see)
-   * @added v0.1.0
+   * @added v0.2.0
    * @param see object[Array]
    * @throws object[TypeError]
    * @description Sets the see array, throwing a [TypeError] if `see` is not a valid [Array].
@@ -225,12 +224,12 @@ class DocketClass {
   
   /**
    * @signature signatures()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns object[Array]
    * @description Gets the signatures array.
    *
    * @signature signatures(obj)
-   * @added v0.1.0
+   * @added v0.2.0
    * @param obj object[Array]
    * @throws object[TypeError]
    * @description Sets the signatures array, throwing a [TypeError] if `obj` is not a valid [Array].
@@ -253,15 +252,15 @@ class DocketClass {
   
   /**
    * @signature updated()
-   * @added v0.1.0
+   * @added v0.2.0
    * @returns object[Array]
-   * @description Gets an array of the versions where this class was updated.
+   * @description Gets an array of the versions where this module was updated.
    *
    * @signature updated(versions)
-   * @added v0.1.0
+   * @added v0.2.0
    * @param versions object[Array]
    * @throws object[TypeError]
-   * @description Sets an array of the versions where this class was updated, throwing a [TypeError] if `versions` is not a 
+   * @description Sets an array of the versions where this module was updated, throwing a [TypeError] if `versions` is not a 
    * valid [Array].
    */
   updated(arg1) {
@@ -281,4 +280,4 @@ class DocketClass {
   }
 }
 
-module.exports.DocketClass = DocketClass;
+module.exports.DocketModule = DocketModule;
