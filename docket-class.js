@@ -13,8 +13,8 @@ class DocketClass {
    * @signature new DocketClass([data])
    * @added v0.1.0
    * @updated v0.3.0
-   * @param data object[Object]
-   * @returns object[DocketClass]
+   * @param data Object
+   * @returns DocketClass
    * @description Returns a new [DocketClass] instance, initializing with any key/value pairs provided in `data` with keys 
    * that match setter method names.
    */
@@ -34,14 +34,14 @@ class DocketClass {
    * @signature added()
    * @added v0.1.0
    * @updated v0.3.0
-   * @returns object[DocketAdded]
+   * @returns DocketAdded
    * @description Gets an object containing data about the version this signature was added.
    *
    * @signature added(data)
    * @added v0.1.0
    * @updated v0.3.0
-   * @param data object[DocketAdded]
-   * @throws object[TypeError]
+   * @param data DocketAdded
+   * @throws TypeError
    * @description Sets as object containing data about the version this signature was added, throwing a [TypeError] if `data` is
    * not a valid [DocketAdded].
    */
@@ -62,13 +62,13 @@ class DocketClass {
   /**
    * @signature authors()
    * @added v0.1.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the authors array.
    *
    * @signature authors(authorsArray)
    * @added v0.1.0
-   * @param authorsArray object[Array]
-   * @throws object[TypeError]
+   * @param authorsArray Array
+   * @throws TypeError
    * @description Sets the authors array, throwing a [TypeError] if `authorsArray` is not a valid [Array].
    */
   authors(arg1) {
@@ -96,7 +96,7 @@ class DocketClass {
    * @signature copyright(text)
    * @added v0.1.0
    * @param text string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the copyright text, throwing a [TypeError] if `text` is not a valid [string].
    */
   copyright(arg1) {
@@ -124,7 +124,7 @@ class DocketClass {
    * @signature description(text)
    * @added v0.1.0
    * @param text string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the description, throwing a [TypeError] if `text` is not a valid [string].
    */
   description(arg1) {
@@ -152,7 +152,7 @@ class DocketClass {
    * @signature name(name)
    * @added v0.1.0
    * @param name string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the name, throwing a [TypeError] if `name` is not a valid [string].
    */
   name(arg1) {
@@ -180,7 +180,7 @@ class DocketClass {
    * @signature module(name)
    * @added v0.2.0
    * @param name string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the module name, throwing a [TypeError] if `name` is not a valid [string].
    */
   module(arg1) {
@@ -202,13 +202,13 @@ class DocketClass {
   /**
    * @signature signatures()
    * @added v0.1.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the signatures array.
    *
    * @signature signatures(signaturesArray)
    * @added v0.1.0
-   * @param signaturesArray object[Array]
-   * @throws object[TypeError]
+   * @param signaturesArray Array
+   * @throws TypeError
    * @description Sets the signatures array, throwing a [TypeError] if `signaturesArray` is not a valid [Array].
    */
   signatures(arg1) {
@@ -230,13 +230,13 @@ class DocketClass {
   /**
    * @signature status()
    * @added v0.3.0
-   * @returns object[DocketStatus]
+   * @returns DocketStatus
    * @description Gets an object containing data about the status of this class.
    *
    * @signature status(status)
    * @added v0.3.0
-   * @param status object[DocketStatus] 
-   * @throws object[TypeError] if `status` is not a valid [DocketStatus]
+   * @param status DocketStatus 
+   * @throws TypeError if `status` is not a valid [DocketStatus]
    * @description Sets an object containing data about the status of this class.
    */
   status(arg1) {
@@ -257,14 +257,14 @@ class DocketClass {
    * @signature updates()
    * @added v0.1.0
    * @updated v0.3.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets an array of the class updates.
    *
    * @signature updates(updatesArray)
    * @added v0.1.0
    * @updated v0.3.0
-   * @param updatesArray object[Array]
-   * @throws object[TypeError]
+   * @param updatesArray Array
+   * @throws TypeError
    * @description Sets an array of the class updates, throwing a [TypeError] if `updatesArray` is not a valid [Array].
    */
   updates(arg1) {

@@ -12,8 +12,8 @@ class DocketSignature {
    * @signature new DocketSignature([data])
    * @added v0.1.0
    * @updated v0.3.0
-   * @param data object[Object]
-   * @returns object[DocketSignature]
+   * @param data Object
+   * @returns DocketSignature
    * @description Returns a new [DocketSignature] instance, initializing with any key/value pairs provided in `data` with 
    * keys that match setter method names.
    */
@@ -36,14 +36,14 @@ class DocketSignature {
    * @signature added()
    * @added v0.1.0
    * @updated v0.3.0
-   * @returns object[DocketAdded]
+   * @returns DocketAdded
    * @description Gets an object containing data about the version this signature was added.
    *
    * @signature added(data)
    * @added v0.1.0
    * @updated v0.3.0
-   * @param data object[DocketAdded]
-   * @throws object[TypeError]
+   * @param data DocketAdded
+   * @throws TypeError
    * @description Sets as object containing data about the version this signature was added, throwing a [TypeError] if `data` is
    * not a valid [DocketAdded].
    */
@@ -64,13 +64,13 @@ class DocketSignature {
   /**
    * @signature authors()
    * @added v0.1.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the authors array.
    *
    * @signature authors(authorsArray)
    * @added v0.1.0
-   * @param authorsArray object[Array]
-   * @throws object[TypeError]
+   * @param authorsArray Array
+   * @throws TypeError
    * @description Sets the authors array, throwing a [TypeError] if `authorsArray` is not a valid [Array].
    */
   authors(arg1) {
@@ -98,7 +98,7 @@ class DocketSignature {
    * @signature class(name)
    * @added v0.2.0
    * @param name string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the class name, throwing a [TypeError] if `name` is not a valid [string].
    */
   class(arg1) {
@@ -126,7 +126,7 @@ class DocketSignature {
    * @signature description(text)
    * @added v0.1.0
    * @param text string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the description, throwing a [TypeError] if `text` is not a valid [string].
    */
   description(arg1) {
@@ -154,7 +154,7 @@ class DocketSignature {
    * @signature name(name)
    * @added v0.1.0
    * @param name string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the name, throwing a [TypeError] if `name` is not a valid [string].
    */
   name(arg1) {
@@ -182,7 +182,7 @@ class DocketSignature {
    * @signature module(name)
    * @added v0.2.0
    * @param name string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the module name, throwing a [TypeError] if `name` is not a valid [string].
    */
   module(arg1) {
@@ -204,13 +204,13 @@ class DocketSignature {
   /**
    * @signature params()
    * @added v0.1.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the params array.
    *
    * @signature params(paramsArray)
    * @added v0.1.0
-   * @param paramsArray object[Array]
-   * @throws object[TypeError]
+   * @param paramsArray Array
+   * @throws TypeError
    * @description Sets the params array, throwing a [TypeError] if `paramsArray` is not a valid [Array].
    */
   params(arg1) {
@@ -233,14 +233,14 @@ class DocketSignature {
    * @signature returns()
    * @added v0.1.0
    * @updated v0.3.0
-   * @returns object[DocketReturns]
+   * @returns DocketReturns
    * @description Gets an object containing the return data.
    *
    * @signature returns(data)
    * @added v0.1.0
    * @updated v0.3.0
-   * @param data object[DocketReturns]
-   * @throws object[TypeError]
+   * @param data DocketReturns
+   * @throws TypeError
    * @description Sets an object containing the return data, throwing a [TypeError] if `data` is not a valid [DocketReturns].
    */
   returns(arg1) {
@@ -266,7 +266,7 @@ class DocketSignature {
    * @signature signature(signature)
    * @added v0.1.0
    * @param signature string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the signature, throwing a [TypeError] if `signature` is not a valid [string].
    */
   signature(arg1) {
@@ -288,13 +288,13 @@ class DocketSignature {
   /**
    * @signature status()
    * @added v0.3.0
-   * @returns object[DocketStatus]
+   * @returns DocketStatus
    * @description Gets an object containing data about the status of this signature.
    *
    * @signature status(status)
    * @added v0.3.0
-   * @param status object[DocketStatus] 
-   * @throws object[TypeError] if `status` is not a valid [DocketStatus]
+   * @param status DocketStatus 
+   * @throws TypeError if `status` is not a valid [DocketStatus]
    * @description Sets an object containing data about the status of this signature.
    */
   status(arg1) {
@@ -314,13 +314,13 @@ class DocketSignature {
   /**
    * @signature throws()
    * @added v0.3.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the throws array.
    *
    * @signature throws(throwsArray)
    * @added v0.3.0
-   * @param throwsArray object[Array]
-   * @throws object[TypeError]
+   * @param throwsArray Array
+   * @throws TypeError
    * @description Sets the throws array, throwing a [TypeError] if `throwsArray` is not a valid [Array].
    */
   throws(arg1) {
@@ -343,14 +343,14 @@ class DocketSignature {
    * @signature updates()
    * @added v0.1.0
    * @updated v0.3.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets an array of the signature updates.
    *
    * @signature updates(updatesArray)
    * @added v0.1.0
    * @updated v0.3.0
-   * @param updatesArray object[Array]
-   * @throws object[TypeError]
+   * @param updatesArray Array
+   * @throws TypeError
    * @description Sets an array of the signature updates, throwing a [TypeError] if `updatesArray` is not a valid [Array].
    */
   updates(arg1) {

@@ -9,8 +9,8 @@ class DocketParam {
   /**
    * @signature new DocketParam([data])
    * @added v0.3.0
-   * @param data object[Object]
-   * @returns object[DocketParam]
+   * @param data Object
+   * @returns DocketParam
    * @description Returns a new [DocketParam] instance, initializing with any key/value pairs provided in `data` with keys 
    * that match setter method names.
    */
@@ -29,7 +29,7 @@ class DocketParam {
    * @signature description(text)
    * @added v0.3.0
    * @param text string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the parameter description, throwing a [TypeError] if `text` is not a valid [string].
    */
   description(arg1) {
@@ -57,7 +57,7 @@ class DocketParam {
    * @signature name(name)
    * @added v0.3.0
    * @param name string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the parameter name, throwing a [TypeError] if `name` is not a valid [string].
    */
   name(arg1) {
@@ -85,7 +85,7 @@ class DocketParam {
    * @signature type(type)
    * @added v0.3.0
    * @param type string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the parameter type, throwing a [TypeError] if `type` is not a valid [string].
    */
   type(arg1) {

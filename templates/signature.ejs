@@ -50,7 +50,7 @@
           <div class='col'>
             <ul>
         <%   params.forEach((param) => { %>
-              <li class='py-1'><var><%-param.name()%></var> <%-param.type()%> <%-param.description()%></li>
+              <li class='py-1'><code class='text-dark p-1'><%-param.name()%></code> <%-param.type()%> <%-param.description()%></li>
         <%   }); %>
         <% if ( throws.length > 0 ) { %>
         <%   throws.forEach((err) => { %>

@@ -9,8 +9,8 @@ class DocketReturns {
   /**
    * @signature new DocketReturns([data])
    * @added v0.3.0
-   * @param data object[Object]
-   * @returns object[DocketReturns]
+   * @param data Object
+   * @returns DocketReturns
    * @description Returns a new [DocketReturns] instance, initializing with any key/value pairs provided in `data` with keys 
    * that match setter method names.
    */
@@ -28,7 +28,7 @@ class DocketReturns {
    * @signature description(text)
    * @added v0.3.0
    * @param text string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the parameter description, throwing a [TypeError] if `text` is not a valid [string].
    */
   description(arg1) {
@@ -56,7 +56,7 @@ class DocketReturns {
    * @signature type(type)
    * @added v0.3.0
    * @param type string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the parameter type, throwing a [TypeError] if `type` is not a valid [string].
    */
   type(arg1) {

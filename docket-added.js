@@ -9,8 +9,8 @@ class DocketAdded {
   /**
    * @signature new DocketAdded([data])
    * @added v0.3.0
-   * @param data object[Object]
-   * @returns object[DocketAdded]
+   * @param data Object
+   * @returns DocketAdded
    * @description Returns a new [DocketAdded] instance, initializing with any key/value pairs provided in `data` with keys 
    * that match setter method names.
    */
@@ -28,7 +28,7 @@ class DocketAdded {
    * @signature description(text)
    * @added v0.3.0
    * @param text string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the parameter description, throwing a [TypeError] if `text` is not a valid [string].
    */
   description(arg1) {
@@ -56,7 +56,7 @@ class DocketAdded {
    * @signature version(version)
    * @added v0.3.0
    * @param version string Should follow semantic versioning http://semver.org
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the version, throwing a [TypeError] if `version` is not a valid [string].
    */
   version(arg1) {

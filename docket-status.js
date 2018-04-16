@@ -9,8 +9,8 @@ class DocketStatus {
   /**
    * @signature new DocketStatus([data])
    * @added v0.3.0
-   * @param data object[Object]
-   * @returns object[DocketStatus]
+   * @param data Object
+   * @returns DocketStatus
    * @description Returns a new [DocketStatus] instance, initializing with any key/value pairs provided in `data` with keys 
    * that match setter method names.
    */
@@ -22,7 +22,7 @@ class DocketStatus {
   /**
    * @signature color()
    * @added v0.3.0
-   * @throws object[RangeError] if status is invalid or has not been set.
+   * @throws RangeError if status is invalid or has not been set.
    * @returns string 
    * @description Returns the appropriate class name based on the status: success for stable, danger, for deprecated, warning
    * for experimental.
@@ -48,7 +48,7 @@ class DocketStatus {
    * @signature description(text)
    * @added v0.3.0
    * @param text string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the parameter description, throwing a [TypeError] if `text` is not a valid [string].
    */
   description(arg1) {
@@ -82,7 +82,7 @@ class DocketStatus {
    * @signature status(status)
    * @added v0.3.0
    * @param status string Can be 'stable', 'experimental', or 'deprecated'
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the status, throwing a [TypeError] if `status` is not a valid [string].
    */
   status(arg1) {

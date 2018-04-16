@@ -30,7 +30,7 @@ class Parser {
    * @added v0.1.0
    * @updated v0.2.0
    * @updated v0.3.0
-   * @returns object[Parser]
+   * @returns Parser
    * @description Returns a new [Parser] instance.
    */
   constructor() {
@@ -48,13 +48,13 @@ class Parser {
   /**
    * @signature classes()
    * @added v0.1.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the classes array.
    *
    * @signature classes(classesArray)
    * @added v0.1.0
-   * @param classesArray object[Array]
-   * @throws object[TypeError]
+   * @param classesArray Array
+   * @throws TypeError
    * @description Sets the classes array, throwing a [TypeError] if `classesArray` is not a valid [Array].
    */
   classes(arg1) {
@@ -83,7 +83,7 @@ class Parser {
    * @signature count(value)
    * @added v0.3.0
    * @param value number
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the count of a counter used internally to set unique ID's for each module, class, or signature that needs
    * them, throwing a [TypeError] if `count` is not a valid [number].
    */
@@ -112,7 +112,7 @@ class Parser {
    * @signature currentFile(fileName)
    * @added v0.2.0
    * @param fileName string
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the current file name, throwing a [TypeError] if `fileName` is not a valid [string].
    */
   currentFile(arg1) {
@@ -135,7 +135,7 @@ class Parser {
    * @signature documentClass(folderPath, class)
    * @added v0.2.0
    * @param folderPath string
-   * @param class object[DocketClass]
+   * @param class DocketClass
    * @description Documents `class` in a file at `folderPath`, including all of its methods that contain docket entries.
    */
   async documentClass(folderPath, c) {
@@ -167,7 +167,7 @@ class Parser {
    * @signature documentModule(folderPath, module)
    * @added v0.2.0
    * @param folderPath string
-   * @param module object[DocketModule]
+   * @param module DocketModule
    * @description Documents `module` in a file at `folderPath`, including all of its classes that contain docket entries.
    */
   async documentModule(folderPath, m) {
@@ -213,7 +213,7 @@ class Parser {
    * @signature documentSignature(folderPath, signature)
    * @added v0.2.0
    * @param folderPath string
-   * @param signature object[DocketSignature]
+   * @param signature DocketSignature
    * @description Documents `signature` in a file at `folderPath`.
    */
   async documentSignature(folderPath, s) {    
@@ -282,7 +282,7 @@ class Parser {
    * @added v0.1.0
    * @updated v0.2.0
    * @param obj object[DocketClass|DocketModule|DocketSignature]
-   * @throws object[TypeError]
+   * @throws TypeError
    * @description Sets the last object or signature block found, throwing a [TypeError] if `obj` is not a valid [DocketClass]
    * or [DocketModule] or [DocketSignature].
    */
@@ -303,13 +303,13 @@ class Parser {
   /**
    * @signature lastClass()
    * @added v0.1.0
-   * @returns object[DocketClass]
+   * @returns DocketClass
    * @description Gets the last class block found.
    *
    * @signature lastClass(class)
    * @added v0.1.0
-   * @param class object[DocketClass]
-   * @throws object[TypeError]
+   * @param class DocketClass
+   * @throws TypeError
    * @description Sets the last class block found, throwing a [TypeError] if `class` is not a valid [DocketClass].
    */
   lastClass(arg1) {
@@ -329,13 +329,13 @@ class Parser {
   /**
    * @signature lastModule()
    * @added v0.2.0
-   * @returns object[DocketModule]
+   * @returns DocketModule
    * @description Gets the last module block found.
    *
    * @signature lastModule(module)
    * @added v0.2.0
-   * @param module object[DocketModule]
-   * @throws object[TypeError]
+   * @param module DocketModule
+   * @throws TypeError
    * @description Sets the last module block found, throwing a [TypeError] if `module` is not a valid [DocketModule].
    */
   lastModule(arg1) {
@@ -355,13 +355,13 @@ class Parser {
   /**
    * @signature lastSignature()
    * @added v0.1.0
-   * @returns object[DocketSignature]
+   * @returns DocketSignature
    * @description Gets the last signature block found.
    *
    * @signature lastSignature(signature)
    * @added v0.1.0
-   * @param signature object[DocketSignature]
-   * @throws object[TypeError]
+   * @param signature DocketSignature
+   * @throws TypeError
    * @description Sets the last signature block found, throwing a [TypeError] if `signature` is not a valid [DocketSignature].
    */
   lastSignature(arg1) {
@@ -381,13 +381,13 @@ class Parser {
   /**
    * @signature modules()
    * @added v0.2.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the modules array.
    *
    * @signature modules(modulesArray)
    * @added v0.2.0
-   * @param modulesArray object[Array]
-   * @throws object[TypeError]
+   * @param modulesArray Array
+   * @throws TypeError
    * @description Sets the modules array, throwing a [TypeError] if `modulesArray` is not a valid [Array].
    */
   modules(arg1) {
@@ -453,7 +453,7 @@ class Parser {
         const data = lines[i].substr(6).trim().split(' ');
         
         a.version(data[0]);
-        a.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        a.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
                 
         this.last().added(a);
       } else if ( lines[i].substr(0, 7) == '@author' ) {
@@ -486,7 +486,7 @@ class Parser {
       } else if ( lines[i].substr(0, 10) == '@copyright' ) {
         this.last().copyright(lines[i].substr(10).trim());
       } else if ( lines[i].substr(0, 12) == '@description' ) {
-        this.last().description(lines[i].substr(12).trim().replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        this.last().description(lines[i].substr(12).trim().replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
       } else if ( lines[i].substr(0, 7) == '@module' ) {
         if ( this.lastClass() ) {
           this.lastClass().module(lines[i].substr(7).trim());
@@ -513,7 +513,7 @@ class Parser {
         
         p.name(data[0]);
         p.type(data[1].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='object-link' href='#'>${x}</a>&gt;`).join('|'));
-        p.description(data.slice(2).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        p.description(data.slice(2).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
         
         this.lastSignature().params().push(p);
       } else if ( lines[i].substr(0, 8) == '@returns' ) {
@@ -522,7 +522,7 @@ class Parser {
         const data = lines[i].substr(8).trim().split(' ');
         
         r.type(data[0].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='object-link' href='#'>${x}</a>&gt;`).join('|'));
-        r.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        r.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
                 
         this.lastSignature().returns(r);
       } else if ( lines[i].substr(0, 10) == '@signature' ) {
@@ -559,7 +559,7 @@ class Parser {
         const data = lines[i].substr(7).trim().split(' ');
         
         s.status(data[0]);
-        s.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        s.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
                 
         this.last().status(s);
       } else if ( lines[i].substr(0, 7) == '@throws' ) {
@@ -568,7 +568,7 @@ class Parser {
         const data = lines[i].substr(7).trim().split(' ');
         
         t.type(data[0].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='object-link' href='#'>${x}</a>&gt;`).join('|'));
-        t.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        t.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
                 
         this.lastSignature().throws().push(t);
       } else if ( lines[i].substr(0, 8) == '@updated' ) {
@@ -576,7 +576,7 @@ class Parser {
         
         const data = lines[i].substr(8).trim().split(' ');
         
-        u.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        u.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
         u.version(data[0]);
                 
         this.last().updates().push(u);
@@ -616,9 +616,9 @@ class Parser {
    * @signature parseFiles(filePathArray)
    * @added v0.2.0
    * @updated v0.3.0
-   * @param filePathArray object[Array]
-   * @description Parses all docket entries in the modules, classes, and method and/or function signatures of the files in the 
-   * `filePathArray` array and stores the resulting object tree in the parser for later document generation.
+   * @param filePathArray Array<string>
+   * @description Parses all docket entries in the modules, classes, and method and/or function signatures of the files in 
+   * `filePathArray` and stores the resulting object tree in the parser for later document generation.
    */
   parseFiles(filePathArray) {
     filePathArray.forEach((filePath) => {
@@ -633,7 +633,7 @@ class Parser {
    * @signature renderClass(class)
    * @added v0.2.0
    * @updated v0.3.0
-   * @param class object[DocketClass]
+   * @param class DocketClass
    * @returns string The rendered HTML
    * @description Renders the EJS class template using the provided `class` object.
    */
@@ -724,7 +724,7 @@ class Parser {
    * @signature renderModule(module)
    * @added v0.2.0
    * @updated v0.3.0
-   * @param module object[DocketModule]
+   * @param module DocketModule
    * @returns string The rendered HTML
    * @description Renders the EJS module template using the provided `module` object.
    */
@@ -772,7 +772,7 @@ class Parser {
    * @signature renderSignature(signature)
    * @added v0.2.0
    * @updated v0.3.0
-   * @param signature object[DocketSignature]
+   * @param signature DocketSignature
    * @returns string The rendered HTML
    * @description Renders the EJS module template using the provided `signature` object.
    */
@@ -830,13 +830,13 @@ class Parser {
   /**
    * @signature signatures()
    * @added v0.2.0
-   * @returns object[Array]
+   * @returns Array
    * @description Gets the signatures array.
    *
    * @signature signatures(signaturesArray)
    * @added v0.2.0
-   * @param signaturesArray object[Array]
-   * @throws object[TypeError]
+   * @param signaturesArray Array
+   * @throws TypeError
    * @description Sets the signatures array, throwing a [TypeError] if `signaturesArray` is not a valid [Array].
    */
   signatures(arg1) {

@@ -1,4 +1,4 @@
-# Docket JavaScript Documentation Generator v0.4.2
+# Docket JavaScript Documentation Generator v0.4.3
 
 ## Usage
 
@@ -10,7 +10,7 @@ const fileList = ['index.js', 'docket-added.js', 'docket-class.js', 'docket-modu
                   'docket-throws.js', 'docket-updated.js', 'parser.js'];
 
 docket.parseFiles(fileList);
-docket.generateDocs(__dirname + '/docs');
+docket.generateDocs('docs');
 ```
 
 ## Outputs
