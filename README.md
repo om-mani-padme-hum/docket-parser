@@ -1,4 +1,4 @@
-# Docket JavaScript Documentation Generator v0.4.0
+# Docket JavaScript Documentation Generator v0.4.2
 
 ## Usage
 
