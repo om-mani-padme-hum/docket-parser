@@ -1,0 +1,79 @@
+/**
+ * @class docket.DocketUpdated
+ * @author Rich Lowe
+ * @copyright 2018 Rich Lowe
+ * @added v0.3.0
+ * @description Data model class for storing module, class, or signature version updated details.
+ */
+class DocketUpdated {
+  /**
+   * @signature new DocketUpdated([data])
+   * @added v0.3.0
+   * @param data object[Object]
+   * @returns object[DocketUpdated]
+   * @description Returns a new [DocketUpdated] instance, initializing with any key/value pairs provided in `data` with keys 
+   * that match setter method names.
+   */
+  constructor(data = {}) {
+    this.description(data.description || '');
+    this.version(data.version || '');
+  }
+  
+  /**
+   * @signature description()
+   * @added v0.3.0
+   * @returns string
+   * @description Gets the parameter description.
+   *
+   * @signature description(text)
+   * @added v0.3.0
+   * @param text string
+   * @throws object[TypeError]
+   * @description Sets the parameter description, throwing a [TypeError] if `text` is not a valid [string].
+   */
+  description(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._description;
+    
+    /** Setter */
+    else if ( typeof arg1 == 'string' )
+      this._description = arg1;
+    
+    /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.description(null): Invalid signature.`);
+    else
+      throw new TypeError(`${this.constructor.name}.description(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+  }
+  
+  /**
+   * @signature version()
+   * @added v0.3.0
+   * @returns string
+   * @description Gets the version.
+   *
+   * @signature version(version)
+   * @added v0.3.0
+   * @param version string Should follow semantic versioning http://semver.org
+   * @throws object[TypeError]
+   * @description Sets the version, throwing a [TypeError] if `version` is not a valid [string].
+   */
+  version(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._type;
+    
+    /** Setter */
+    else if ( typeof arg1 == 'string' )
+      this._type = arg1;
+    
+    /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
+    else
+      throw new TypeError(`${this.constructor.name}.type(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+  }
+}
+
+module.exports.DocketUpdated = DocketUpdated;

@@ -3,42 +3,49 @@
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @added v0.1.0
+ * @updated 0.3.0
  * @description Data model class for storing signature-level docket entries.
  */
 class DocketSignature {
   /**
    * @signature new DocketSignature([data])
    * @added v0.1.0
+   * @updated v0.3.0
    * @param data object[Object]
    * @returns object[DocketSignature]
-   * @description Returns a new [DocketSignature] instance, initializing with any key: value pairs provided in `data` with 
+   * @description Returns a new [DocketSignature] instance, initializing with any key/value pairs provided in `data` with 
    * keys that match setter method names.
    */
   constructor(data = {}) {
-    this.added(data.added || '');
+    this.added(data.added || null);
     this.authors(data.authors || []);
     this.class(data.class || '');
     this.description(data.description || '');
     this.name(data.name || '');
     this.module(data.module || '');
-    this.param(data.param || []);
-    this.returns(data.returns || '');
-    this.see(data.see || []);
+    this.params(data.params || []);
+    this.returns(data.returns || null);
+    this.sees(data.sees || []);
     this.signature(data.signature || '');
-    this.updated(data.updated || []);
+    this.status(data.status || null);
+    this.throws(data.throws || []);
+    this.updates(data.updates || []);
   }
   
   /**
    * @signature added()
    * @added v0.1.0
-   * @returns string
-   * @description Gets the version this signature was added.
+   * @updated v0.3.0
+   * @returns object[DocketAdded]
+   * @description Gets an object containing data about the version this signature was added.
    *
-   * @signature added(version)
+   * @signature added(data)
    * @added v0.1.0
-   * @param version string
+   * @updated v0.3.0
+   * @param data object[DocketAdded]
    * @throws object[TypeError]
-   * @description Sets the version this signature was added, throwing a [TypeError] if `version` is not a valid [string].
+   * @description Sets as object containing data about the version this signature was added, throwing a [TypeError] if `data` is
+   * not a valid [DocketAdded].
    */
   added(arg1) {
     /** Getter */
@@ -46,12 +53,10 @@ class DocketSignature {
       return this._added;
     
     /** Setter */
-    else if ( typeof arg1 == 'string' )
+    else if ( arg1 === null || ( typeof arg1 == 'object' && arg1.constructor.name == 'DocketAdded' ) )
       this._added = arg1;
     
     /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.added(null): Invalid signature.`);
     else
       throw new TypeError(`${this.constructor.name}.added(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
   }
@@ -62,11 +67,11 @@ class DocketSignature {
    * @returns object[Array]
    * @description Gets the authors array.
    *
-   * @signature authors(authors)
+   * @signature authors(authorsArray)
    * @added v0.1.0
-   * @param authors object[Array]
+   * @param authorsArray object[Array]
    * @throws object[TypeError]
-   * @description Sets the authors array, throwing a [TypeError] if `authors` is not a valid [Array].
+   * @description Sets the authors array, throwing a [TypeError] if `authorsArray` is not a valid [Array].
    */
   authors(arg1) {
     /** Getter */
@@ -197,44 +202,46 @@ class DocketSignature {
   }
   
   /**
-   * @signature param()
+   * @signature params()
    * @added v0.1.0
    * @returns object[Array]
-   * @description Gets the param array.
+   * @description Gets the params array.
    *
-   * @signature param(param)
+   * @signature params(paramsArray)
    * @added v0.1.0
-   * @param param object[Array]
+   * @param paramsArray object[Array]
    * @throws object[TypeError]
-   * @description Sets the param array, throwing a [TypeError] if `param` is not a valid [Array].
+   * @description Sets the params array, throwing a [TypeError] if `paramsArray` is not a valid [Array].
    */
-  param(arg1) {
+  params(arg1) {
     /** Getter */
     if ( arg1 === undefined )
-      return this._param;
+      return this._params;
     
     /** Setter */
     else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
-      this._param = arg1;
+      this._params = arg1;
     
     /** Handle errors */
     else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.param(null): Invalid signature.`);
+      throw new TypeError(`${this.constructor.name}.params(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.param(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+      throw new TypeError(`${this.constructor.name}.params(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
   }
   
   /**
    * @signature returns()
    * @added v0.1.0
-   * @returns string
-   * @description Gets the return data.
+   * @updated v0.3.0
+   * @returns object[DocketReturns]
+   * @description Gets an object containing the return data.
    *
    * @signature returns(data)
    * @added v0.1.0
-   * @param data string
+   * @updated v0.3.0
+   * @param data object[DocketReturns]
    * @throws object[TypeError]
-   * @description Sets the return data, throwing a [TypeError] if `data` is not a valid [string].
+   * @description Sets an object containing the return data, throwing a [TypeError] if `data` is not a valid [DocketReturns].
    */
   returns(arg1) {
     /** Getter */
@@ -242,42 +249,42 @@ class DocketSignature {
       return this._returns;
     
     /** Setter */
-    else if ( typeof arg1 == 'string' )
+    else if ( arg1 === null || ( typeof arg1 == 'object' && arg1.constructor.name == 'DocketReturns' ) )
       this._returns = arg1;
     
     /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.returns(null): Invalid signature.`);
     else
       throw new TypeError(`${this.constructor.name}.returns(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
   }
   
   /**
-   * @signature see()
+   * @signature sees()
    * @added v0.1.0
+   * @updated v0.3.0
    * @returns object[Array]
-   * @description Gets the see array.
+   * @description Gets the sees array.
    *
-   * @signature see(see)
+   * @signature sees(seesArray)
    * @added v0.1.0
-   * @param see object[Array]
+   * @updated v0.3.0
+   * @param seesArray object[Array]
    * @throws object[TypeError]
-   * @description Sets the see array, throwing a [TypeError] if `see` is not a valid [Array].
+   * @description Sets the sees array, throwing a [TypeError] if `seesArray` is not a valid [Array].
    */
-  see(arg1) {
+  sees(arg1) {
     /** Getter */
     if ( arg1 === undefined )
-      return this._see;
+      return this._sees;
     
     /** Setter */
     else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
-      this._see = arg1;
+      this._sees = arg1;
     
     /** Handle errors */
     else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.see(null): Invalid signature.`);
+      throw new TypeError(`${this.constructor.name}.sees(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.see(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+      throw new TypeError(`${this.constructor.name}.sees(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
   }
   
   /**
@@ -309,32 +316,87 @@ class DocketSignature {
   }
   
   /**
-   * @signature updated()
-   * @added v0.1.0
-   * @returns object[Array]
-   * @description Gets an array of the versions where this signature was updated.
+   * @signature status()
+   * @added v0.3.0
+   * @returns object[DocketStatus]
+   * @description Gets an object containing data about the status of this signature.
    *
-   * @signature updated(versions)
-   * @added v0.1.0
-   * @param versions object[Array]
-   * @throws object[TypeError]
-   * @description Sets an array of the versions where this signature was updated, throwing a [TypeError] if `versions` is not a 
-   * valid [Array].
+   * @signature status(status)
+   * @added v0.3.0
+   * @param status object[DocketStatus] 
+   * @throws object[TypeError] if `status` is not a valid [DocketStatus]
+   * @description Sets an object containing data about the status of this signature.
    */
-  updated(arg1) {
+  status(arg1) {
     /** Getter */
     if ( arg1 === undefined )
-      return this._updated;
+      return this._status;
+    
+    /** Setter */
+    else if ( arg1 === null || ( typeof arg1 == 'object' && arg1.constructor.name == 'DocketStatus' ) )
+      this._status = arg1;
+    
+    /** Handle errors */
+    else
+      throw new TypeError(`${this.constructor.name}.status(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+  }
+  
+  /**
+   * @signature throws()
+   * @added v0.3.0
+   * @returns object[Array]
+   * @description Gets the throws array.
+   *
+   * @signature throws(throwsArray)
+   * @added v0.3.0
+   * @param throwsArray object[Array]
+   * @throws object[TypeError]
+   * @description Sets the throws array, throwing a [TypeError] if `throwsArray` is not a valid [Array].
+   */
+  throws(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._throws;
     
     /** Setter */
     else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
-      this._updated = arg1;
+      this._throws = arg1;
     
     /** Handle errors */
     else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.updated(null): Invalid signature.`);
+      throw new TypeError(`${this.constructor.name}.throws(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.updated(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+      throw new TypeError(`${this.constructor.name}.throws(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+  }
+  
+  /**
+   * @signature updates()
+   * @added v0.1.0
+   * @updated v0.3.0
+   * @returns object[Array]
+   * @description Gets an array of the signature updates.
+   *
+   * @signature updates(updatesArray)
+   * @added v0.1.0
+   * @updated v0.3.0
+   * @param updatesArray object[Array]
+   * @throws object[TypeError]
+   * @description Sets an array of the signature updates, throwing a [TypeError] if `updatesArray` is not a valid [Array].
+   */
+  updates(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._updates;
+    
+    /** Setter */
+    else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
+      this._updates = arg1;
+    
+    /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.updates(null): Invalid signature.`);
+    else
+      throw new TypeError(`${this.constructor.name}.updates(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
   }
 }
 

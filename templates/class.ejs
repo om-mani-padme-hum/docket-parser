@@ -1,50 +1,56 @@
       <hr>
       <div class='row'>
         <div class='col'>
-          <h3 class='mt-2'>Class: <%-c.module().length > 0 ? c.module() + '.' : ''%><%-c.name()%></h3>
+          <h3 class='mt-2 pl-1'>Class: <%-title%></h3>
         </div>
       </div>
       <div class='pl-3'>
-        <% if ( c.copyright().length > 0 || c.authors().length > 0 ) { %>
+        <% if ( status ) { %>
+        <div class='row'>
+          <div class='col-auto'>
+            <div class='alert mt-2 alert-<%-status.color()%>'>
+              <strong><%-status.status(true)%></strong>: <%-status.description()%>
+            </div>
+          </div>
+        </div>
+        <% } %>
+        <% if ( copyright.length > 0 || authors.length > 0 ) { %>
         <div class='row'>
           <div class='col'>
             <p>
         <% } %>
-        <% if ( c.copyright().length > 0 ) { %>
-              <small>Copyright &copy; <%-c.copyright()%></small>
+        <% if ( copyright.length > 0 ) { %>
+              <small>Copyright &copy; <%-copyright%></small>
               <br>
         <% } %>
-        <% if ( c.authors().length > 0 ) { %>
-              <small>
-                <var>Written by: 
-        <%   for ( let i = 0, i_max = c.authors().length; i < i_max; i++ ) { %>
-                <%-c.authors()[i]%><%-i == i_max - 1 ? '' : ','%>
-        <%   } %>
-                </var>
-              </small>
+        <% if ( authors.length > 0 ) { %>
+              <small>Written by: <%-authors%></small>
         <% } %>
-        <% if ( c.copyright().length > 0 || c.authors().length > 0 ) { %>
+        <% if ( copyright.length > 0 || authors.length > 0 ) { %>
             </p>
           </div>
         </div>
         <% } %>
-        <% if ( c.added().length > 0 || c.updated().length > 0 ) { %>
+        <% if ( added || updates.length > 0 ) { %>
         <div class='row'>
-          <div class='col'>
+          <div class='col-auto'>
             <p>
+              <small>&#9656; <a class='text-success' data-toggle='collapse' href='#collapse<%-count%>'>History</a></small>
+            </p>
+            <div class='collapse' id='collapse<%-count%>'>
+              <div class='card card-body p-1 px-3 ml-3 mb-2'>
         <% } %>
-        <% if ( c.added().length > 0 ) { %>
-              <small>Added in: <%-c.added()%></small>
-              <br>
+        <% if ( added ) { %>
+                <small>Added in: <%-added.version()%> <%-added.description()%></small>
         <% } %>
-        <% if ( c.updated().length > 0 ) { %>
-        <%   c.updated().forEach((updated) => { %>
-              <small>Updated in: <%-updated%></small>
-              <br>
+        <% if ( updates.length > 0 ) { %>
+        <%   updates.forEach((update) => { %>
+                <small>Updated in: <%-update.version()%> <%-update.description()%></small>
         <%   }); %>
         <% } %>
-        <% if ( c.added().length > 0 || c.updated().length > 0 ) { %>
-            </p>
+        <% if ( added || updates.length > 0 ) { %>
+              </div>
+            </div>  
           </div>
         </div>
         <% } %>
@@ -55,15 +61,15 @@
             </ul>
           </div>
         </div>
-        <% if ( c.description().length > 0 ) { %>
+        <% if ( description.length > 0 ) { %>
         <div class='row'>
           <div class='col'>
-            <p><%-c.description().replace(/`([a-zA-Z0-9_$]+)`/g, `<samp class='bg-samp px-1'>$1</samp>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `<a class='text-success' href='#'>$1</a>`)%></p>
+            <p><%-description%></p>
           </div>
         </div>
         <% } %>
-        <% if ( c.see().length > 0 ) { %>
-        <%   c.see().forEach((see) => { %>
+        <% if ( sees.length > 0 ) { %>
+        <%   sees.forEach((see) => { %>
         <div class='row'>
           <div class='col'>
             <p>See: <a href='#'><%-see%></a></p>
