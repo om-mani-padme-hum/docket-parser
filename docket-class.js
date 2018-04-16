@@ -5,6 +5,7 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.0
+ * @updated v0.4.0
  * @description Data model class for storing class-level docket entries.
  */
 class DocketClass {

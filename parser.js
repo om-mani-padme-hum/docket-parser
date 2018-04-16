@@ -21,6 +21,7 @@ const docketUpdated = require('./docket-updated');
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.0
+ * @updated v0.4.0
  * @description Class for parsing docket entries in JavaScript class files using the acorn JavaScript parser.
  */
 class Parser {

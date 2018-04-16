@@ -4,6 +4,7 @@
  * @copyright 2018 Rich Lowe
  * @added v0.2.0
  * @updated v0.3.0
+ * @updated v0.4.0
  * @description Data model class for storing module-level docket entries.
  */
 class DocketModule {
