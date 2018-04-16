@@ -1,9 +1,9 @@
-# Docket JavaScript Documentation Generator v0.4.3
+# Docket JavaScript Documentation Generator v0.4.4
 
 ## Usage
 
 ```javascript
-const docket = require('docket');
+const docket = require('docket-parser');
 
 const fileList = ['index.js', 'docket-added.js', 'docket-class.js', 'docket-module.js', 
                   'docket-param.js', 'docket-returns.js', 'docket-signature.js', 'docket-status.js', 
