@@ -1,6 +1,6 @@
 {
   "name": "docket",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Docket JavaScript Documentation Generator",
   "main": "index.js",
   "scripts": {
