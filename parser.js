@@ -524,8 +524,6 @@ class Parser {
         r.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<var>$1</var>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
                 
         this.lastSignature().returns(r);
-      } else if ( lines[i].substr(0, 4) == '@see' ) {
-        this.last().sees().push(lines[i].substr(4).trim());
       } else if ( lines[i].substr(0, 10) == '@signature' ) {
         const s = new docketSignature.DocketSignature();
         
@@ -670,7 +668,6 @@ class Parser {
       count: this.count(),
       description: c.description(),
       name: c.name(),
-      sees: c.sees(),
       status: c.status(),
       title: title,
       updates: c.updates()
@@ -754,7 +751,6 @@ class Parser {
       count: this.count(),
       description: m.description(),
       name: m.name(),
-      sees: m.sees(),
       status: m.status(),
       title: m.name(),
       updates: m.updates()
@@ -813,7 +809,6 @@ class Parser {
       module: s.module(),
       params: s.params(),
       returns: s.returns(),
-      sees: s.sees(),
       status: s.status(),
       throws: s.throws(),
       title: title,

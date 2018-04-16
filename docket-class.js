@@ -24,7 +24,6 @@ class DocketClass {
     this.description(data.description || '');
     this.name(data.name || '');
     this.module(data.module || '');
-    this.sees(data.sees || []);
     this.signatures(data.signatures || []);
     this.status(data.status || null);
     this.updates(data.updates || []);
@@ -198,37 +197,7 @@ class DocketClass {
     else
       throw new TypeError(`${this.constructor.name}.module(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
   }
-  
-  /**
-   * @signature sees()
-   * @added v0.1.0
-   * @updated v0.3.0
-   * @returns object[Array]
-   * @description Gets the sees array.
-   *
-   * @signature sees(seesArray)
-   * @added v0.1.0
-   * @updated v0.3.0
-   * @param seesArray object[Array]
-   * @throws object[TypeError]
-   * @description Sets the sees array, throwing a [TypeError] if `seesArray` is not a valid [Array].
-   */
-  sees(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._sees;
-    
-    /** Setter */
-    else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
-      this._sees = arg1;
-    
-    /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.sees(null): Invalid signature.`);
-    else
-      throw new TypeError(`${this.constructor.name}.sees(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
-  }
-  
+
   /**
    * @signature signatures()
    * @added v0.1.0
