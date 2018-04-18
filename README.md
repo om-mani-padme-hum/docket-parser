@@ -1,4 +1,4 @@
-# Docket JavaScript Documentation Generator v0.4.5
+# Docket JavaScript Documentation Generator v0.4.6
 
 ## Usage
 
@@ -23,7 +23,6 @@ elsewhere also for easier viewing.
 * Add auto-rendered table of contents with scroll-spy capability from Bootstrap
 * Move rendering from large EJS templates to small EJS templates rendered by the individual classes
 * Link all objects together, including links to other modules, and standard objects to Mozilla
-* Update comments to take advantage of additional descriptions (such as moving thrown error descriptions to docket entries)
 
 ## License
 

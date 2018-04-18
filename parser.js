@@ -263,10 +263,10 @@ class Parser {
     /** Copy Bootstrap files to folderPath */
     console.log('Copying Boostrap files...');
     
-    fs.copyFileSync(__dirname + '/node_modules/bootstrap/dist/js/bootstrap.min.js', folderPath + '/bootstrap.min.js');
-    fs.copyFileSync(__dirname + '/node_modules/bootstrap/dist/css/bootstrap.min.css', folderPath + '/bootstrap.min.css');
-    fs.copyFileSync(__dirname + '/node_modules/jquery/dist/jquery.min.js', folderPath + '/jquery.min.js');
-    fs.copyFileSync(__dirname + '/node_modules/popper.js/dist/popper.min.js', folderPath + '/popper.min.js');
+    fs.copyFileSync('node_modules/bootstrap/dist/js/bootstrap.min.js', folderPath + '/bootstrap.min.js');
+    fs.copyFileSync('node_modules/bootstrap/dist/css/bootstrap.min.css', folderPath + '/bootstrap.min.css');
+    fs.copyFileSync('node_modules/jquery/dist/jquery.min.js', folderPath + '/jquery.min.js');
+    fs.copyFileSync('node_modules/popper.js/dist/popper.min.js', folderPath + '/popper.min.js');
     
     console.log('Done!');
   }
