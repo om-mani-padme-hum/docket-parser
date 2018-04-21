@@ -1,4 +1,4 @@
-# Docket JavaScript Documentation Generator v0.4.6
+# Docket JavaScript Documentation Generator v0.5.0
 
 ## Usage
 
@@ -17,6 +17,12 @@ docket.generateDocs('docs');
 
 The documentation for Docket, which you can find in the `/docs` folder, though this will soon be hosted 
 elsewhere also for easier viewing.
+
+## Helper
+
+This package comes with a tool called `helper.js` that can be used to quickly generate getters and setters
+complete with Docket style documentation using a small, customized object structure representing the class
+properties.  The output is written to `helper-out.js` and can be copied into the body of any class.
 
 ## Todo
 
