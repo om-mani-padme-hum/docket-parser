@@ -1,6 +1,6 @@
 {
   "name": "docket-parser",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Docket JavaScript Documentation Generator",
   "main": "index.js",
   "scripts": {
