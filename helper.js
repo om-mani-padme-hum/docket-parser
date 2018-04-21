@@ -1,6 +1,28 @@
 const fs = require('fs');
 
 const properties = {
+  height: ['number', 'pixels', 'the height of the canvas in pixels.'],
+  width: ['number', 'pixels', 'the width of the canvas in pixels.']
+};
+
+/*
+const properties = {
+  autofocus: ['boolean', 'flag', 'a boolean indicating whether the button should automatically get focus when the page loads.'],
+  disabled: ['boolean', 'flag', 'a boolean indicating whether the button should be disabled.'],
+  form: ['string', 'formId', 'the ID of the form that the button belongs to.'],
+  formaction: ['string', 'action', 'where to send the form-data when a form is submitted, only for type="submit".'],
+  formenctype: ['string', 'enctype', 'how the form-data should be encoded before sending it to a server, only for type="submit".'],
+  formmethod: ['string', 'method', 'the HTTP method used to send the data, only for type="submit".'],
+  formnovalidate: ['boolean', 'flag', 'a boolean indicating whether the form-data should not be validated on submission, only for type="submit".'],
+  formtarget: ['string', 'target', 'where to display the response after submitting the form, only for type="submit".'],
+  name: ['string', 'name', 'the name of the button.'],
+  type: ['string', 'flag', 'the button type'],
+  value: ['string', 'flag', 'the initial button value.']
+};
+*/
+
+/*
+const properties = {
   autoplay: ['boolean', 'flag', 'a boolean indicating whether the audio should start playing as soon as it is ready.'],
   controls: ['boolean', 'flag', 'a boolean indicating whether the audio controls should be displayed.'],
   loop: ['boolean', 'flag', 'a boolean indicating whether the audio should start over again, every time it is finished.'],
@@ -8,7 +30,7 @@ const properties = {
   preload: ['string', 'method', 'the preferred method for loading the audio.'],
   src: ['string', 'url', 'the URL of the audio file.']
 };
-
+*/
 /*
 const properties = {
   alt: ['string', 'text', 'the alternate text for the area.  Required if the href attribute is present.'],
@@ -66,7 +88,7 @@ Object.keys(properties).forEach((property) => {
   }
   
   markup += ' '.repeat(2) + `  else\n`;
-  markup += ' '.repeat(2) + `    throw new TypeError(\`\${this.constructor.name}.${property}(\${typeof arg1}): Invalid signature .\`);\n\n`;
+  markup += ' '.repeat(2) + `    throw new TypeError(\`\${this.constructor.name}.${property}(\${arg1.constructor.name}): Invalid signature .\`);\n\n`;
 
   markup += ' '.repeat(2) + `  /** Allow for call chaining */\n`;
   markup += ' '.repeat(2) + `  return this;\n`;
