@@ -1,13 +1,12 @@
-# Docket JavaScript Documentation Generator v0.6.3
+# Docket JavaScript Documentation Generator v0.6.4
 
 ## Installation
 
 `npm install docket-parser`
 
-Use the example below and
-enter your code filenames into the array, making sure that module directives preceed all class and signature
-directives you want it to contain, and similarly including class directives before any signature directives
-you want it to contain.  If you don't get the order right, Docket will output an error.
+Use the example below and enter your code filenames into the array, making sure that module directives preceed 
+all class and signature directives you want it to contain, and similarly including class directives before any 
+signature directives you want it to contain.  If you don't get the order right, Docket will output an error.
 
 ## Usage
 
@@ -18,7 +17,8 @@ const fileList = ['index.js', 'docket-added.js', 'docket-class.js', 'docket-modu
                   'docket-param.js', 'docket-returns.js', 'docket-signature.js', 'docket-status.js', 
                   'docket-throws.js', 'docket-updated.js', 'parser.js'];
 
-docket.title('Docket v0.6.3 Documentation');
+docket.title('Docket v0.6.4 Documentation');
+docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
 ```

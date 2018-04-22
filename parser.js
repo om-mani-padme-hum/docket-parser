@@ -23,6 +23,8 @@ const docketUpdated = require('./docket-updated');
  * @updated v0.3.0
  * @updated v0.4.0
  * @updated v0.6.0
+ * @updated v0.6.2
+ * @updated v0.6.4
  * @description Class for parsing docket entries in JavaScript class files using the acorn JavaScript parser.
  */
 class Parser {
@@ -31,6 +33,8 @@ class Parser {
    * @added v0.1.0
    * @updated v0.2.0
    * @updated v0.3.0
+   * @updated v0.6.2
+   * @updated v0.6.4
    * @returns Parser
    * @description Returns a new [Parser] instance.
    */
@@ -42,6 +46,7 @@ class Parser {
     this.lastClass(null);
     this.lastModule(null);
     this.lastSignature(null);
+    this.linkClass('text-success');
     this.modules([]);
     this.signatures([]);
     this.title('');
@@ -385,6 +390,33 @@ class Parser {
   }
   
   /**
+   * @signature linkClass()
+   * @added v0.6.4
+   * @returns string
+   * @description Gets the CSS class that should be applied to the links for customized colors.
+   *
+   * @signature linkClass(class)
+   * @added v0.6.4
+   * @param class string
+   * @throws TypeError
+   * @description Sets the CSS class that should be applied to the links for customized colors, throwing a [TypeError] 
+   * if `class` is not a valid [string].
+   */
+  linkClass(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._linkClass;
+    
+    /** Setter */
+    else if ( typeof arg1 == 'string' )
+      this._linkClass = arg1;
+    
+    /** Handle errors */
+    else
+      throw new TypeError(`${this.constructor.name}.linkClass(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+  }
+  
+  /**
    * @signature modules()
    * @added v0.2.0
    * @returns Array
@@ -417,6 +449,7 @@ class Parser {
    * @added v0.1.0
    * @updated v0.2.0
    * @updated v0.3.0
+   * @updated v0.6.4
    * @param block boolean True if this is a block type comment, false otherwise
    * @param text string Comment text
    * @param start number Starting line number
@@ -459,7 +492,7 @@ class Parser {
         const data = lines[i].substr(6).trim().split(' ');
         
         a.version(data[0]);
-        a.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        a.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='${this.linkClass()}' href='#'>$1</a>&gt;`));
                 
         this.last().added(a);
       } else if ( lines[i].substr(0, 7) == '@author' ) {
@@ -492,7 +525,7 @@ class Parser {
       } else if ( lines[i].substr(0, 10) == '@copyright' ) {
         this.last().copyright(lines[i].substr(10).trim());
       } else if ( lines[i].substr(0, 12) == '@description' ) {
-        this.last().description(lines[i].substr(12).trim().replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        this.last().description(lines[i].substr(12).trim().replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='${this.linkClass()}' href='#'>$1</a>&gt;`));
       } else if ( lines[i].substr(0, 7) == '@module' ) {
         if ( this.lastClass() ) {
           this.lastClass().module(lines[i].substr(7).trim());
@@ -518,8 +551,8 @@ class Parser {
         const data = lines[i].substr(6).trim().split(' ');
         
         p.name(data[0]);
-        p.type(data[1].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='object-link' href='#'>${x}</a>&gt;`).join('|'));
-        p.description(data.slice(2).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        p.type(data[1].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='${this.linkClass()}' href='#'>${x}</a>&gt;`).join('|'));
+        p.description(data.slice(2).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='${this.linkClass()}' href='#'>$1</a>&gt;`));
         
         this.lastSignature().params().push(p);
       } else if ( lines[i].substr(0, 8) == '@returns' ) {
@@ -527,8 +560,8 @@ class Parser {
         
         const data = lines[i].substr(8).trim().split(' ');
         
-        r.type(data[0].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='object-link' href='#'>${x}</a>&gt;`).join('|'));
-        r.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        r.type(data[0].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='${this.linkClass()}' href='#'>${x}</a>&gt;`).join('|'));
+        r.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='${this.linkClass()}' href='#'>$1</a>&gt;`));
                 
         this.lastSignature().returns(r);
       } else if ( lines[i].substr(0, 10) == '@signature' ) {
@@ -565,7 +598,7 @@ class Parser {
         const data = lines[i].substr(7).trim().split(' ');
         
         s.status(data[0]);
-        s.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        s.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='${this.linkClass()}' href='#'>$1</a>&gt;`));
                 
         this.last().status(s);
       } else if ( lines[i].substr(0, 7) == '@throws' ) {
@@ -573,8 +606,8 @@ class Parser {
         
         const data = lines[i].substr(7).trim().split(' ');
         
-        t.type(data[0].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='object-link' href='#'>${x}</a>&gt;`).join('|'));
-        t.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        t.type(data[0].replace(/object\[|\]/g, '').split('|').map(x => `&lt;<a class='${this.linkClass()}' href='#'>${x}</a>&gt;`).join('|'));
+        t.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='${this.linkClass()}' href='#'>$1</a>&gt;`));
                 
         this.lastSignature().throws().push(t);
       } else if ( lines[i].substr(0, 8) == '@updated' ) {
@@ -582,7 +615,7 @@ class Parser {
         
         const data = lines[i].substr(8).trim().split(' ');
         
-        u.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='text-success' href='#'>$1</a>&gt;`));
+        u.description(data.slice(1).join(' ').replace(/`([a-zA-Z0-9_$]+)`/g, `<code class='text-dark p-1'>$1</code>`).replace(/\[([a-zA-Z0-9_$]+)\]/g, `&lt;<a class='${this.linkClass()}' href='#'>$1</a>&gt;`));
         u.version(data[0]);
                 
         this.last().updates().push(u);
@@ -640,6 +673,7 @@ class Parser {
    * @added v0.2.0
    * @updated v0.3.0
    * @updated v0.6.0
+   * @updated v0.6.4
    * @param class DocketClass
    * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
@@ -690,6 +724,7 @@ class Parser {
       count: this.count(),
       description: c.description(),
       id: id,
+      linkClass: this.linkClass(),
       name: c.name(),
       status: c.status(),
       title: title,
@@ -710,6 +745,7 @@ class Parser {
   /**
    * @signature renderFooter()
    * @added v0.2.0
+   * @updated v0.6.4
    * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
    * @description Renders the EJS footer template.
@@ -717,8 +753,13 @@ class Parser {
   renderFooter() {
     console.log(`Documenting footer...`);
     
+    /** Create data object for passing to template */
+    const data = {
+      linkClass: this.linkClass()
+    }
+    
     return new Promise((resolve, reject) => {
-      ejs.renderFile(__dirname + '/templates/footer.ejs', {}, {}, (err, html) => {
+      ejs.renderFile(__dirname + '/templates/footer.ejs', data, {}, (err, html) => {
         if ( err )
           reject(err);
 
@@ -731,6 +772,7 @@ class Parser {
    * @signature renderHeader(obj)
    * @added v0.2.0
    * @updated v0.6.0
+   * @updated v0.6.4
    * @param obj object[DocketClass|DocketModule|DocketSignature]
    * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
@@ -739,8 +781,14 @@ class Parser {
   renderHeader(obj) {
     console.log(`Documenting header...`);
     
+    /** Create data object for passing to template */
+    const data = {
+      linkClass: this.linkClass(),
+      title: this.title()
+    }
+    
     return new Promise((resolve, reject) => {
-      ejs.renderFile(__dirname + '/templates/header.ejs', { title: this.title(), obj: obj }, {}, (err, html) => {
+      ejs.renderFile(__dirname + '/templates/header.ejs', data, {}, (err, html) => {
         if ( err )
           reject(err);
 
@@ -754,6 +802,7 @@ class Parser {
    * @added v0.2.0
    * @updated v0.3.0
    * @updated v0.6.0
+   * @updated v0.6.4
    * @param module DocketModule
    * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
@@ -785,6 +834,7 @@ class Parser {
       count: this.count(),
       description: m.description(),
       id: `m-${m.name()}`,
+      linkClass: this.linkClass(),
       name: m.name(),
       status: m.status(),
       title: m.name(),
@@ -807,6 +857,7 @@ class Parser {
    * @added v0.2.0
    * @updated v0.3.0
    * @updated v0.6.0
+   * @updated v0.6.4
    * @param signature DocketSignature
    * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
@@ -864,6 +915,7 @@ class Parser {
       count: this.count(),
       description: s.description(),
       id: id,
+      linkClass: this.linkClass(),
       name: s.name(),
       module: s.module(),
       params: s.params(),
@@ -888,6 +940,7 @@ class Parser {
   /**
    * @signature renderTableOfContents(obj)
    * @added v0.6.0
+   * @updated v0.6.4
    * @param obj object[DocketClass|DocketModule|DocketSignature]
    * @returns string The rendered HTML
    * @throws Error if EJS fails to render the template
@@ -901,7 +954,7 @@ class Parser {
       
       if ( obj.constructor.name == 'DocketClass' ) {
         /** Output list item for the class */
-        list += ' '.repeat(14) + `<li class='py-1'><a class='text-success' href='#c-${obj.name()}'>Class: ${obj.name()}</a></li>\n`;
+        list += ' '.repeat(14) + `<li class='py-1'><a class='${this.linkClass()}' href='#c-${obj.name()}'>Class: ${obj.name()}</a></li>\n`;
 
         /** Create a nested ordered list for all of the classes signatures */
         list += ' '.repeat(14) + `<ul>\n`;
@@ -910,13 +963,13 @@ class Parser {
         obj.signatures().forEach((s) => {
           /** Output list item for the signature */
           if ( s.name().substr(0, 3) == 'new' )
-            list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-new'>${s.name()}</a></li>\n`;
+            list += ' '.repeat(16) + `<li class='py-1'><a class='${this.linkClass()}' href='#s-${s.class()}-new'>${s.signature()}</a></li>\n`;
           else
-            list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-${s.name()}'>${s.class()[0].toLowerCase()}${s.class().slice(1)}.${s.name()}</a></li>\n`;
+            list += ' '.repeat(16) + `<li class='py-1'><a class='${this.linkClass()}' href='#s-${s.class()}-${s.name()}'>${s.class()[0].toLowerCase()}${s.class().slice(1)}.${s.signature()}</a></li>\n`;
         });
       } else if ( obj.constructor.name == 'DocketModule' ) {
         /** Output list item for the module */
-        list += ' '.repeat(12) + `<li class='py-1'><a class='text-success' href='#m-${obj.name()}'>Module: ${obj.name()}</a></li>\n`;
+        list += ' '.repeat(12) + `<li class='py-1'><a class='${this.linkClass()}' href='#m-${obj.name()}'>Module: ${obj.name()}</a></li>\n`;
         
         if ( obj.classes() ) {
           /** Create a nested unordered list for all of the modules classes */
@@ -925,7 +978,7 @@ class Parser {
           /** Loop through each module class */
           obj.classes().forEach((c) => {
             /** Output list item for the class */
-            list += ' '.repeat(14) + `<li class='py-1'><a class='text-success' href='#c-${c.module()}-${c.name()}'>Class: ${c.name()}</a></li>\n`;
+            list += ' '.repeat(14) + `<li class='py-1'><a class='${this.linkClass()}' href='#c-${c.module()}-${c.name()}'>Class: ${c.name()}</a></li>\n`;
             
             /** Create a nested ordered list for all of the classes signatures */
             list += ' '.repeat(14) + `<ul>\n`;
@@ -934,9 +987,9 @@ class Parser {
             c.signatures().forEach((s) => {
               /** Output list item for the signature */
               if ( s.name().substr(0, 3) == 'new' )
-                list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-new'>${s.name()}</a></li>\n`;
+                list += ' '.repeat(16) + `<li class='py-1'><a class='${this.linkClass()}' href='#s-${s.class()}-new'>${s.signature()}</a></li>\n`;
               else
-                list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-${s.name()}'>${s.class()[0].toLowerCase()}${s.class().slice(1)}.${s.name()}</a></li>\n`;
+                list += ' '.repeat(16) + `<li class='py-1'><a class='${this.linkClass()}' href='#s-${s.class()}-${s.name()}'>${s.class()[0].toLowerCase()}${s.class().slice(1)}.${s.signature()}</a></li>\n`;
             });
 
             list += ' '.repeat(14) + `</ul>\n`;
@@ -945,14 +998,14 @@ class Parser {
           /** Loop through each module signature */
           obj.signatures().forEach((s) => {
             /** Output list item for the signature */
-            list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.module()}-${s.name()}'>${s.module()[0].toLowerCase()}${s.module().slice(1)}.${s.name()}</a></li>\n`;
+            list += ' '.repeat(16) + `<li class='py-1'><a class='${this.linkClass()}' href='#s-${s.module()}-${s.name()}'>${s.module()[0].toLowerCase()}${s.module().slice(1)}.${s.name()}</a></li>\n`;
           });
                                 
           list += ' '.repeat(12) + `</ul>\n`;
         }
       } else if ( obj.constructor.name == 'DocketSignature' ) {
         /** Output list item for the signature */
-        list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.name()}'>${s.name()}</a></li>\n`;
+        list += ' '.repeat(16) + `<li class='py-1'><a class='${this.linkClass()}' href='#s-${s.name()}'>${s.signature()}</a></li>\n`;
       }
       
       ejs.renderFile(__dirname + '/templates/table-of-contents.ejs', {list: list}, {}, (err, html) => {
