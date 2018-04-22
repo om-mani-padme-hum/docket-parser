@@ -1,4 +1,13 @@
-# Docket JavaScript Documentation Generator v0.6.0
+# Docket JavaScript Documentation Generator v0.6.1
+
+## Installation
+
+`npm install docket-parser`
+
+Copy example.js from the module directory, change the require directive to `require('docket-parser')` and
+enter your code filenames into the array, making sure that module directives preceed all class and signature
+directives you want it to contain, and similarly including class directives before any signature directives
+you want it to contain.  If you don't get the order right, Docket will output an error.
 
 ## Usage
 
