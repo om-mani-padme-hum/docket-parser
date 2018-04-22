@@ -119,13 +119,13 @@ class DocketClass {
    * @signature description()
    * @added v0.1.0
    * @returns string
-   * @description Gets the description.
+   * @description Gets a description of the class.
    *
    * @signature description(text)
    * @added v0.1.0
    * @param text string
    * @throws TypeError
-   * @description Sets the description, throwing a [TypeError] if `text` is not a valid [string].
+   * @description Sets a description of the class, throwing a [TypeError] if `text` is not a valid [string].
    */
   description(arg1) {
     /** Getter */
@@ -147,13 +147,13 @@ class DocketClass {
    * @signature name()
    * @added v0.1.0
    * @returns string
-   * @description Gets the name.
+   * @description Gets the name of the class.
    *
    * @signature name(name)
    * @added v0.1.0
    * @param name string
    * @throws TypeError
-   * @description Sets the name, throwing a [TypeError] if `name` is not a valid [string].
+   * @description Sets the name of the class, throwing a [TypeError] if `name` is not a valid [string].
    */
   name(arg1) {
     /** Getter */

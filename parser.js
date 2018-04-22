@@ -22,6 +22,7 @@ const docketUpdated = require('./docket-updated');
  * @updated v0.2.0
  * @updated v0.3.0
  * @updated v0.4.0
+ * @updated v0.6.0
  * @description Class for parsing docket entries in JavaScript class files using the acorn JavaScript parser.
  */
 class Parser {
@@ -134,25 +135,27 @@ class Parser {
   /**
    * @signature documentClass(folderPath, class)
    * @added v0.2.0
+   * @updated v0.6.0
    * @param folderPath string
    * @param class DocketClass
    * @description Documents `class` in a file at `folderPath`, including all of its methods that contain docket entries.
    */
   async documentClass(folderPath, c) {
     const signatures = c.signatures();
-    
-    console.log(`Documenting class ${c.name()}...`);
-     
+         
     let markup = '';
     
-    /** Generate class documentation */
+    /** Render the header */
     markup += await this.renderHeader(c);
+    
+    /** Render the table of contents */
+    markup += await this.renderTableOfContents(c);
+    
+    /** Render the class */
     markup += await this.renderClass(c);
     
     /** Generate signature documentation */
-    for ( let i = 0, i_max = signatures.length; i < i_max; i++ ) {
-      console.log(`Documenting signature ${c.name()}.${signatures[i].name()}...`);
-      
+    for ( let i = 0, i_max = signatures.length; i < i_max; i++ ) {      
       markup += await this.renderSignature(signatures[i]);
     }
     
@@ -166,6 +169,7 @@ class Parser {
   /**
    * @signature documentModule(folderPath, module)
    * @added v0.2.0
+   * @updated v0.6.0
    * @param folderPath string
    * @param module DocketModule
    * @description Documents `module` in a file at `folderPath`, including all of its classes that contain docket entries.
@@ -173,34 +177,30 @@ class Parser {
   async documentModule(folderPath, m) {
     const classes = m.classes();
     const signatures = m.signatures();
-    
-    console.log(`Documenting module ${m.name()}...`);
-     
+         
     let markup = '';
     
-    /** Generate module documentation */
+    /** Render the header */
     markup += await this.renderHeader(m);
+    
+    /** Render the table of contents */
+    markup += await this.renderTableOfContents(m);
+    
+    /** Render the module */
     markup += await this.renderModule(m);
     
     /** Generate class documentation */
     for ( let i = 0, i_max = classes.length; i < i_max; i++ ) {
-      console.log(`Documenting class ${m.name()}.${classes[i].name()}...`);
-
       markup += await this.renderClass(classes[i]);
       
-      for ( let j = 0, j_max = classes[i].signatures().length; j < j_max; j++ ) {
-        console.log(`Documenting signature ${m.name()}.${classes[i].name()}.${classes[i].signatures()[j].name()}...`);
-        
+      for ( let j = 0, j_max = classes[i].signatures().length; j < j_max; j++ ) {        
         markup += await this.renderSignature(classes[i].signatures()[j]);
       }
     }
     
     /** Generate signature documentation */
-    for ( let i = 0, i_max = signatures.length; i < i_max; i++ ) {
-      console.log(`Documenting signature ${m.name()}.${signatures[i].name()}...`);
-      
+    for ( let i = 0, i_max = signatures.length; i < i_max; i++ )      
       markup += await this.renderSignature(signatures[i]);
-    }
     
     /** Finish module documentation */
     markup += await this.renderFooter();
@@ -212,17 +212,21 @@ class Parser {
   /**
    * @signature documentSignature(folderPath, signature)
    * @added v0.2.0
+   * @updated v0.6.0
    * @param folderPath string
    * @param signature DocketSignature
    * @description Documents `signature` in a file at `folderPath`.
    */
-  async documentSignature(folderPath, s) {    
-    console.log(`Documenting signature ${s.name()}...`);
-     
+  async documentSignature(folderPath, s) {         
     let markup = '';
     
-    /** Generate signature documentation */
+    /** Render the header */
     markup += await this.renderHeader(s);
+    
+    /** Render the table of contents */
+    markup += await this.renderTableOfContents(s);
+    
+    /** Render the signature */
     markup += await this.renderSignature(s);
     markup += await this.renderFooter();
     
@@ -233,10 +237,11 @@ class Parser {
   /**
    * @signature generateDocs(folderPath)
    * @added v0.2.0
+   * @updated v0.6.0
    * @param folderPath string
    * @description Generates the documentation for parsed docket classes and saves one file per class to `folderPath`.
    */
-  generateDocs(folderPath) {
+  async generateDocs(folderPath) {
     const classes = this.classes();
     const modules = this.modules();
     const signatures = this.signatures();
@@ -250,15 +255,15 @@ class Parser {
     
     /** Generate class documentation */
     for ( let i = 0, i_max = classes.length; i < i_max; i++ )
-      this.documentClass(folderPath, classes[i]);
+      await this.documentClass(folderPath, classes[i]);
     
     /** Generate module documentation */
     for ( let i = 0, i_max = modules.length; i < i_max; i++ )
-      this.documentModule(folderPath, modules[i]);
+      await this.documentModule(folderPath, modules[i]);
     
     /** Generate signature documentation */
     for ( let i = 0, i_max = signatures.length; i < i_max; i++ )
-      this.documentSignature(folderPath, signatures[i]);
+      await this.documentSignature(folderPath, signatures[i]);
     
     /** Copy Bootstrap files to folderPath */
     console.log('Copying Boostrap files...');
@@ -633,11 +638,18 @@ class Parser {
    * @signature renderClass(class)
    * @added v0.2.0
    * @updated v0.3.0
+   * @updated v0.6.0
    * @param class DocketClass
+   * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
    * @description Renders the EJS class template using the provided `class` object.
    */
   renderClass(c) {
+    if ( c.module().length > 0 )
+      console.log(`Documenting class ${c.module()}.${c.name()}...`);
+    else
+      console.log(`Documenting class ${c.name()}...`);
+    
     /** Increase the count by one */
     this.count(this.count() + 1);
     
@@ -661,6 +673,14 @@ class Parser {
       
     title += c.name();
     
+    /** ID */
+    let id = '';
+    
+    if ( c.module().length > 0 )
+      id = `c-${c.module()}-${c.name()}`;
+    else
+      id = `c-${c.name()}`;
+    
     /** Create data object for passing to template */
     const data = {
       added: c.added(),
@@ -668,6 +688,7 @@ class Parser {
       copyright: c.copyright(),
       count: this.count(),
       description: c.description(),
+      id: id,
       name: c.name(),
       status: c.status(),
       title: title,
@@ -688,10 +709,13 @@ class Parser {
   /**
    * @signature renderFooter()
    * @added v0.2.0
+   * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
    * @description Renders the EJS footer template.
    */
   renderFooter() {
+    console.log(`Documenting footer...`);
+    
     return new Promise((resolve, reject) => {
       ejs.renderFile(__dirname + '/templates/footer.ejs', {}, {}, (err, html) => {
         if ( err )
@@ -703,15 +727,19 @@ class Parser {
   }
 
   /**
-   * @signature renderHeader(data)
+   * @signature renderHeader(obj)
    * @added v0.2.0
-   * @param data object[DocketClass|DocketModule|DocketSignature]
+   * @updated v0.6.0
+   * @param obj object[DocketClass|DocketModule|DocketSignature]
+   * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
    * @description Renders the EJS header template.
    */
-  renderHeader(data) {
+  renderHeader(obj) {
+    console.log(`Documenting header...`);
+    
     return new Promise((resolve, reject) => {
-      ejs.renderFile(__dirname + '/templates/header.ejs', {data: data}, {}, (err, html) => {
+      ejs.renderFile(__dirname + '/templates/header.ejs', {obj: obj}, {}, (err, html) => {
         if ( err )
           reject(err);
 
@@ -724,11 +752,15 @@ class Parser {
    * @signature renderModule(module)
    * @added v0.2.0
    * @updated v0.3.0
+   * @updated v0.6.0
    * @param module DocketModule
+   * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
    * @description Renders the EJS module template using the provided `module` object.
    */
   renderModule(m) {
+    console.log(`Documenting module ${m.name()}...`);
+    
     /** Increase the count by one */
     this.count(this.count() + 1);
     
@@ -751,6 +783,7 @@ class Parser {
       copyright: m.copyright(),
       count: this.count(),
       description: m.description(),
+      id: `m-${m.name()}`,
       name: m.name(),
       status: m.status(),
       title: m.name(),
@@ -772,11 +805,20 @@ class Parser {
    * @signature renderSignature(signature)
    * @added v0.2.0
    * @updated v0.3.0
+   * @updated v0.6.0
    * @param signature DocketSignature
+   * @throws Error if EJS fails to render the template
    * @returns string The rendered HTML
    * @description Renders the EJS module template using the provided `signature` object.
    */
   renderSignature(s) {
+    if ( s.class().length > 0 )
+      console.log(`Documenting signature ${s.class()}.${s.name()}...`);
+    else if ( s.module().length > 0 )
+      console.log(`Documenting signature ${s.module()}.${s.name()}...`);
+    else
+      console.log(`Documenting signature ${s.name()}...`);
+
     /** Increase the count by one */
     this.count(this.count() + 1);
     
@@ -796,16 +838,31 @@ class Parser {
     let title = '';
     
     if ( s.class().length > 0 && s.signature().substr(0, 4) != 'new ' )
-      title += `${s.class()[0].toLowerCase()}${s.class().slice(1)}.`;
+      title = `${s.class()[0].toLowerCase()}${s.class().slice(1)}.`;
       
     title += s.signature();
         
+    /** ID */
+    let id = '';
+    
+    if ( s.class().length > 0 ) {
+      if ( s.name().substr(0, 3) == 'new' )
+        id = `s-${s.class()}-new`;
+      else
+        id = `s-${s.class()}-${s.name()}`;
+    } else if ( s.module().length > 0 ) {
+      id = `s-${s.module()}-${s.name()}`;
+    } else {
+      id = `s-${s.name()}`;
+    }
+    
     /** Create data object for passing to template */
     const data = {
       added: s.added(),
       authors: authors,
       count: this.count(),
       description: s.description(),
+      id: id,
       name: s.name(),
       module: s.module(),
       params: s.params(),
@@ -827,6 +884,85 @@ class Parser {
     });
   }
 
+  /**
+   * @signature renderTableOfContents(obj)
+   * @added v0.6.0
+   * @param obj object[DocketClass|DocketModule|DocketSignature]
+   * @returns string The rendered HTML
+   * @throws Error if EJS fails to render the template
+   * @description Renders the EJS table of contents template.
+   */
+  renderTableOfContents(obj) {
+    console.log(`Documenting table of contents...`);
+    
+    return new Promise((resolve, reject) => {
+      let list = '';
+      
+      if ( obj.constructor.name == 'DocketClass' ) {
+        /** Output list item for the class */
+        list += ' '.repeat(14) + `<li class='py-1'><a class='text-success' href='#c-${obj.name()}'>Class: ${obj.name()}</a></li>\n`;
+
+        /** Create a nested ordered list for all of the classes signatures */
+        list += ' '.repeat(14) + `<ul>\n`;
+
+        /** Loop through each class signature */
+        obj.signatures().forEach((s) => {
+          /** Output list item for the signature */
+          if ( s.name().substr(0, 3) == 'new' )
+            list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-new'>${s.name()}</a></li>\n`;
+          else
+            list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-${s.name()}'>${s.class()[0].toLowerCase()}${s.class().slice(1)}.${s.name()}</a></li>\n`;
+        });
+      } else if ( obj.constructor.name == 'DocketModule' ) {
+        /** Output list item for the module */
+        list += ' '.repeat(12) + `<li class='py-1'><a class='text-success' href='#m-${obj.name()}'>Module: ${obj.name()}</a></li>\n`;
+        
+        if ( obj.classes() ) {
+          /** Create a nested unordered list for all of the modules classes */
+          list += ' '.repeat(12) + `<ul>\n`;
+          
+          /** Loop through each module class */
+          obj.classes().forEach((c) => {
+            /** Output list item for the class */
+            list += ' '.repeat(14) + `<li class='py-1'><a class='text-success' href='#c-${c.module()}-${c.name()}'>Class: ${c.module()[0].toLowerCase()}${c.module().slice(1)}.${c.name()}</a></li>\n`;
+            
+            /** Create a nested ordered list for all of the classes signatures */
+            list += ' '.repeat(14) + `<ul>\n`;
+          
+            /** Loop through each class signature */
+            c.signatures().forEach((s) => {
+              /** Output list item for the signature */
+              if ( s.name().substr(0, 3) == 'new' )
+                list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-new'>${s.name()}</a></li>\n`;
+              else
+                list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.class()}-${s.name()}'>${s.class()[0].toLowerCase()}${s.class().slice(1)}.${s.name()}</a></li>\n`;
+            });
+
+            list += ' '.repeat(14) + `</ul>\n`;
+          });
+          
+          /** Loop through each module signature */
+          obj.signatures().forEach((s) => {
+            /** Output list item for the signature */
+            list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.module()}-${s.name()}'>${s.module()[0].toLowerCase()}${s.module().slice(1)}.${s.name()}</a></li>\n`;
+          });
+                                
+          list += ' '.repeat(12) + `</ul>\n`;
+        }
+      } else if ( obj.constructor.name == 'DocketSignature' ) {
+        /** Output list item for the signature */
+        list += ' '.repeat(16) + `<li class='py-1'><a class='text-success' href='#s-${s.name()}'>${s.name()}</a></li>\n`;
+      }
+      
+      ejs.renderFile(__dirname + '/templates/table-of-contents.ejs', {list: list}, {}, (err, html) => {
+        if ( err )
+          reject(err);
+
+        resolve(html + '\n');
+      });
+    });
+  }
+  
   /**
    * @signature signatures()
    * @added v0.2.0
