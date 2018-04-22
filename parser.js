@@ -44,6 +44,7 @@ class Parser {
     this.lastSignature(null);
     this.modules([]);
     this.signatures([]);
+    this.title('');
   }
   
   /**
@@ -739,7 +740,7 @@ class Parser {
     console.log(`Documenting header...`);
     
     return new Promise((resolve, reject) => {
-      ejs.renderFile(__dirname + '/templates/header.ejs', {obj: obj}, {}, (err, html) => {
+      ejs.renderFile(__dirname + '/templates/header.ejs', { title: this.title(), obj: obj }, {}, (err, html) => {
         if ( err )
           reject(err);
 
@@ -924,7 +925,7 @@ class Parser {
           /** Loop through each module class */
           obj.classes().forEach((c) => {
             /** Output list item for the class */
-            list += ' '.repeat(14) + `<li class='py-1'><a class='text-success' href='#c-${c.module()}-${c.name()}'>Class: ${c.module()[0].toLowerCase()}${c.module().slice(1)}.${c.name()}</a></li>\n`;
+            list += ' '.repeat(14) + `<li class='py-1'><a class='text-success' href='#c-${c.module()}-${c.name()}'>Class: ${c.name()}</a></li>\n`;
             
             /** Create a nested ordered list for all of the classes signatures */
             list += ' '.repeat(14) + `<ul>\n`;
@@ -989,6 +990,32 @@ class Parser {
       throw new TypeError(`${this.constructor.name}.signatures(null): Invalid signature.`);
     else
       throw new TypeError(`${this.constructor.name}.signatures(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
+  }
+  
+  /**
+   * @signature title()
+   * @added v0.6.2
+   * @returns string
+   * @description Gets the title of the documentation.
+   *
+   * @signature title(text)
+   * @added v0.6.2
+   * @param text string
+   * @throws TypeError
+   * @description Sets the title of the documentation, throwing a [TypeError] if `data` is not a valid [string].
+   */
+  title(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._title;
+    
+    /** Setter */
+    else if ( typeof arg1 == 'string' )
+      this._title = arg1;
+    
+    /** Handle errors */
+    else
+      throw new TypeError(`${this.constructor.name}.title(${typeof arg1}[${arg1.constructor.name}]): Invalid signature.`);
   }
 }
 
