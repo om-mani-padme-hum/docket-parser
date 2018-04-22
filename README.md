@@ -1,10 +1,10 @@
-# Docket JavaScript Documentation Generator v0.6.2
+# Docket JavaScript Documentation Generator v0.6.3
 
 ## Installation
 
 `npm install docket-parser`
 
-Copy example.js from the module directory, change the require directive to `require('docket-parser')` and
+Use the example below and
 enter your code filenames into the array, making sure that module directives preceed all class and signature
 directives you want it to contain, and similarly including class directives before any signature directives
 you want it to contain.  If you don't get the order right, Docket will output an error.
@@ -18,26 +18,28 @@ const fileList = ['index.js', 'docket-added.js', 'docket-class.js', 'docket-modu
                   'docket-param.js', 'docket-returns.js', 'docket-signature.js', 'docket-status.js', 
                   'docket-throws.js', 'docket-updated.js', 'parser.js'];
 
+docket.title('Docket v0.6.3 Documentation');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
 ```
 
 ## Outputs
 
-The documentation for Docket, which you can find in the `/docs` folder, though this will soon be hosted 
-elsewhere also for easier viewing.
+The documentation for Docket can be found in the `/docs` folder, though these docs are in HTML and once
+Markdown support is added, the docs will be displayed in this README.
 
 ## Helper
 
 This package comes with a tool called `helper.js` that can be used to quickly generate getters and setters
 complete with Docket style documentation using a small, customized object structure representing the class
-properties.  The output is written to `helper-out.js` and can be copied into the body of any class.
+properties.  The output is written to `helper-out.js` and can be copied into the body of any class.  Customize
+it however you'd like.
 
 ## Todo
 
-* Add auto-rendered table of contents with scroll-spy capability from Bootstrap
-* Move rendering from large EJS templates to small EJS templates rendered by the individual classes
+* Add scroll-spy capability from Bootstrap
 * Link all objects together, including links to other modules, and standard objects to Mozilla
+* Add option to output in Markdown format
 
 ## License
 

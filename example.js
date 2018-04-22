@@ -4,6 +4,6 @@ const fileList = ['index.js', 'docket-added.js', 'docket-class.js', 'docket-modu
                   'docket-param.js', 'docket-returns.js', 'docket-signature.js', 'docket-status.js', 
                   'docket-throws.js', 'docket-updated.js', 'parser.js'];
 
-docket.title('Docket v0.6.2 Documentation');
+docket.title('Docket v0.6.3 Documentation');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
