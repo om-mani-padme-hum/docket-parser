@@ -1,4 +1,4 @@
-# Docket JavaScript Documentation Generator v0.6.5
+# Docket JavaScript Documentation Generator v0.6.6
 
 ## Installation
 
@@ -17,7 +17,7 @@ const fileList = ['index.js', 'docket-added.js', 'docket-class.js', 'docket-modu
                   'docket-param.js', 'docket-returns.js', 'docket-signature.js', 'docket-status.js', 
                   'docket-throws.js', 'docket-updated.js', 'parser.js'];
 
-docket.title('Docket v0.6.4 Documentation');
+docket.title('Docket v0.X.X Documentation');
 docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
