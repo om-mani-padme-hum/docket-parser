@@ -245,7 +245,9 @@ class Parser {
    * @added v0.2.0
    * @updated v0.6.0
    * @param folderPath string
-   * @description Generates the documentation for parsed docket classes and saves one file per class to `folderPath`.
+   * @description Generates the documentation for parsed docket modules, classes, and signatures and saves one file per 
+   * module, one file per class that is not part of a module, and one file per signature that is not part of a module or
+   * class to `folderPath`.
    */
   async generateDocs(folderPath) {
     const classes = this.classes();

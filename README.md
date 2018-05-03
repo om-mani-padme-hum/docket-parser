@@ -1,4 +1,4 @@
-# Docket JavaScript Documentation Generator v0.6.4
+# Docket JavaScript Documentation Generator v0.6.5
 
 ## Installation
 
@@ -37,9 +37,10 @@ it however you'd like.
 
 ## Todo
 
-* Add scroll-spy capability from Bootstrap
 * Link all objects together, including links to other modules, and standard objects to Mozilla
 * Add option to output in Markdown format
+* Add support for documenting properties
+* Add scroll-spy capability from Bootstrap
 
 ## License
 
