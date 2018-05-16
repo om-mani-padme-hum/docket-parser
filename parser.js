@@ -588,7 +588,7 @@ class Parser {
         this.lastSignature(s);
         
         if ( this.lastModule() && s.module().length > 0 && s.module() == this.lastModule().name() )
-          this.lastModule.signatures().push(s);
+          this.lastModule().signatures().push(s);
         else if ( s.module().length > 0 )
           throw new Error(`${this.currentFile()}: @module used in signature when no matching module has been parsed.`);
         else if ( this.lastClass() )
