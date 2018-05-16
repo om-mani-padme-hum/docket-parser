@@ -453,6 +453,7 @@ class Parser {
    * @updated v0.2.0
    * @updated v0.3.0
    * @updated v0.6.4
+   * @updated v0.6.7
    * @param block boolean True if this is a block type comment, false otherwise
    * @param text string Comment text
    * @param start number Starting line number
