@@ -1,4 +1,4 @@
-# Docket JavaScript Documentation Generator v0.7.1
+# Docket JavaScript Documentation Generator v0.7.2
 
 ## Installation
 
