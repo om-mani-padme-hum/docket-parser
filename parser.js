@@ -1008,6 +1008,9 @@ class Parser {
           list += ' '.repeat(12) + `</ul>\n`;
         }
       } else if ( obj.constructor.name == 'DocketSignature' ) {
+        /** Define signature object */
+        const s = obj;
+        
         /** Output list item for the signature */
         list += ' '.repeat(16) + `<li class='py-1'><a class='${this.linkClass()}' href='#s-${s.name()}'>${s.signature()}</a></li>\n`;
       }
