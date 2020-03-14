@@ -20,11 +20,11 @@
   "author": "Rich Lowe",
   "license": "MIT",
   "dependencies": {
-    "acorn": "^5.7.3",
-    "bootstrap": "^4.3.1",
-    "ejs": "^2.6.1",
+    "acorn": "^5.7.4",
+    "bootstrap": "^4.4.1",
+    "ejs": "^2.7.4",
     "jquery": "^3.4.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.16.1"
   },
   "eslintConfig": {
     "parserOptions": {
