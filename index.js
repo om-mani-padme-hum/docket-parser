@@ -6,7 +6,7 @@ const parser = require('./parser');
  * @copyright 2018 Rich Lowe
  * @author Rich Lowe
  * @status experimental This module is still in pre-release development and significant API changes can be expected.
- * @description A simple module for parsing and generating beatiful documentation from Node.js modules, classes, and method 
- * signatures.
+ * @description A simple module for automatically parsing comments in your code to generate beatiful documentation 
+ * from Node.js modules, classes, and method signatures.
  */
 module.exports = new parser.Parser();
